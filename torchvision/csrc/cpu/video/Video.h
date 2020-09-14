@@ -33,6 +33,7 @@ struct Video : torch::CustomClassHolder {
     // time in comination with any_frame settings
     double seekTS=-1; 
     bool doSeek=false;
+    torch::Tensor dummy;
     std::tuple<std::string, long> current_stream;
     std::map<std::string, std::vector<double>> streamFPS;
     std::map<std::string, std::vector<double>> streamDuration;
@@ -44,6 +45,10 @@ struct Video : torch::CustomClassHolder {
         std::vector<double> getDuration(std::string stream="") const;
         std::vector<double> getFPS(std::string stream="") const;
         void Seek(double ts, bool any_frame);
+        int64_t debugReadVideo();
+        int64_t debugReadVideoToTensor();
+        int64_t nextDebugNR(std::string stream);
+        torch::List<torch::Tensor> NextDebug(std::string stream);
         torch::List<torch::Tensor> Next(std::string stream); //
 
     private:

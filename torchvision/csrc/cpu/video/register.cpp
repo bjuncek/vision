@@ -12,7 +12,11 @@ static auto registerVideo =
         .def("duration", &Video::getDuration)
         .def("fps", &Video::getFPS)
         .def("seek", &Video::Seek)
-        .def("next", &Video::Next);
+        .def("next", &Video::Next)
+        .def("nextDebug", &Video::NextDebug)
+        .def("nextDebugNoReturn", &Video::nextDebugNR)
+        .def("debug_video", &Video::debugReadVideo)
+        .def("debug_video_tensor", &Video::debugReadVideoToTensor);
 
 
 } //namespace

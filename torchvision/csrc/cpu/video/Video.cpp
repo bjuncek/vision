@@ -228,6 +228,11 @@ Video::Video(std::string videoPath, std::string stream, bool isReadFile) {
         videoMetadata = header;
         videoFPS.push_back(fps);
         videoDuration.push_back(duration);
+
+        int oh = header.format.format.video.height;
+        int ow = header.format.format.video.width;
+        int nc = 3;
+        dummy = torch::ones({oh, ow, nc}, torch::kByte);
       } else if (header.format.type == TYPE_AUDIO) {
         audioFPS.push_back(fps);
         audioDuration.push_back(duration);
@@ -384,6 +389,225 @@ torch::List<torch::Tensor> Video::Next(std::string stream) {
   result.push_back(framePTS);
   return result;
 }
+
+//////// DELETE ALL UNDER THIS - DEBUGing issues
+
+torch::List<torch::Tensor> Video::NextDebug(std::string stream) {
+
+  bool newInit = false;
+  if ((!stream.empty()) && (_parseStream(stream) != current_stream)) {
+      current_stream = _parseStream(stream);
+      newInit = true;
+  }
+
+  if ((seekTS != -1) && (doSeek == true)) {
+      newInit = true;
+      doSeek = false;
+  }
+
+  if (newInit){
+    succeeded = Video::_setCurrentStream();
+    if (succeeded) {
+      newInit = false;
+      // cout << "Reinitializing the decoder again \n";
+    }
+  }
+
+  // if failing to decode simply return 0 (note, maybe
+  // raise an exeption otherwise)
+  torch::Tensor framePTS = torch::zeros({1}, torch::kFloat);
+
+  // first decode the frame
+  DecoderOutputMessage out;
+  int64_t res = decoder.decode(&out, decoderTimeoutMs);
+  if (res == 0) {
+    auto header = out.header;
+    const auto& format = header.format;
+    // then initialize the output variables based on type
+    size_t expectedWrittenBytes = 0;
+
+    if ((seekTS == -1) || (video_any_frame == false)) {
+
+      out.payload.reset();
+    }
+  } else {
+    LOG(ERROR) << "Decoder run into a last iteration or has failed";
+  }
+
+  torch::List<torch::Tensor> result;
+  result.push_back(dummy);
+  result.push_back(framePTS);
+  return result;
+}
+
+
+int64_t Video::nextDebugNR(std::string stream) {
+
+  bool newInit = false;
+  if ((!stream.empty()) && (_parseStream(stream) != current_stream)) {
+      current_stream = _parseStream(stream);
+      newInit = true;
+  }
+
+  if ((seekTS != -1) && (doSeek == true)) {
+      newInit = true;
+      doSeek = false;
+  }
+
+  if (newInit){
+    succeeded = Video::_setCurrentStream();
+    if (succeeded) {
+      newInit = false;
+      // cout << "Reinitializing the decoder again \n";
+    }
+  }
+
+  // first decode the frame
+  DecoderOutputMessage out;
+  int64_t res = decoder.decode(&out, decoderTimeoutMs);
+  if (res == 0) {
+    auto header = out.header;
+    const auto& format = header.format;
+
+    // then initialize the output variables based on type
+    size_t expectedWrittenBytes = 0;
+
+    if ((seekTS == -1) || (video_any_frame == false)) {
+
+      out.payload.reset();
+    }
+    return int64_t(1);
+  } else {
+    LOG(ERROR) << "Decoder run into a last iteration or has failed";
+    return int64_t(0);
+  }
+}
+
+
+// returns number of written bytes
+template <typename T>
+size_t fillTensor(
+    std::vector<DecoderOutputMessage>& msgs,
+    torch::Tensor& frame,
+    torch::Tensor& framePts,
+    int64_t num,
+    int64_t den) {
+  if (msgs.empty()) {
+    return 0;
+  }
+  T* frameData = frame.numel() > 0 ? frame.data_ptr<T>() : nullptr;
+  int64_t* framePtsData = framePts.data_ptr<int64_t>();
+  CHECK_EQ(framePts.size(0), msgs.size());
+  size_t avgElementsInFrame = frame.numel() / msgs.size();
+
+  size_t offset = 0;
+  for (size_t i = 0; i < msgs.size(); ++i) {
+    const auto& msg = msgs[i];
+    // convert pts into original time_base
+    AVRational avr = {(int)num, (int)den};
+    framePtsData[i] = av_rescale_q(msg.header.pts, AV_TIME_BASE_Q, avr);
+    VLOG(2) << "PTS type: " << sizeof(T) << ", us: " << msg.header.pts
+            << ", original: " << framePtsData[i];
+
+    if (frameData) {
+      auto sizeInBytes = msg.payload->length();
+      memcpy(frameData + offset, msg.payload->data(), sizeInBytes);
+      if (sizeof(T) == sizeof(uint8_t)) {
+        // Video - move by allocated frame size
+        offset += avgElementsInFrame / sizeof(T);
+      } else {
+        // Audio - move by number of samples
+        offset += sizeInBytes / sizeof(T);
+      }
+    }
+  }
+  return offset * sizeof(T);
+}
+
+size_t fillVideoTensorDBG(
+    std::vector<DecoderOutputMessage>& msgs,
+    torch::Tensor& videoFrame,
+    torch::Tensor& videoFramePts,
+    int64_t num,
+    int64_t den) {
+  return fillTensor<uint8_t>(msgs, videoFrame, videoFramePts, num, den);
+}
+
+
+
+
+int64_t Video::debugReadVideoToTensor() {
+  DecoderOutputMessage out;
+  std::vector<DecoderOutputMessage> videoMessages;
+
+  size_t audioFrames = 0, videoFrames = 0, totalBytes = 0;
+  while (0 == decoder.decode(&out, 10000)) {
+    if (out.header.format.type == TYPE_VIDEO) {
+      ++videoFrames;
+      videoMessages.push_back(std::move(out));
+
+    } 
+  LOG(INFO) << "Decoded audio frames: " << audioFrames
+            << ", video frames: " << videoFrames
+            << ", total bytes: " << totalBytes;
+  
+  }
+  
+  torch::Tensor videoFrame = torch::zeros({0}, torch::kByte);
+  torch::Tensor videoFramePts = torch::zeros({0}, torch::kLong);
+  if (!videoMessages.empty()) {
+     auto header = videoMetadata;
+     const auto& format = header.format.format.video;
+      int numVideoFrames = videoMessages.size();
+      int outHeight = format.height;
+      int outWidth = format.width;
+      int numChannels = 3; // decoder guarantees the default AV_PIX_FMT_RGB24
+      videoFrame = torch::zeros(
+            {numVideoFrames, outHeight, outWidth, numChannels}, torch::kByte);
+      videoFramePts = torch::zeros({numVideoFrames}, torch::kLong);
+      auto numberWrittenBytes = fillVideoTensorDBG(
+          videoMessages, videoFrame, videoFramePts, header.num, header.den);
+      // LOG(ERROR) << "Writen bytes: " << numberWrittenBytes;
+  }
+  return int64_t(videoFrames);
+}
+
+int64_t Video::debugReadVideo() {
+  DecoderOutputMessage out;
+  std::vector<DecoderOutputMessage> videoMessages;
+
+  size_t audioFrames = 0, videoFrames = 0, totalBytes = 0;
+  while (0 == decoder.decode(&out, 10000)) {
+    if (out.header.format.type == TYPE_VIDEO) {
+      ++videoFrames;
+      videoMessages.push_back(std::move(out));
+
+    } 
+  LOG(INFO) << "Decoded audio frames: " << audioFrames
+            << ", video frames: " << videoFrames
+            << ", total bytes: " << totalBytes;
+  
+  }
+  
+  torch::Tensor videoFrame = torch::zeros({0}, torch::kByte);
+  torch::Tensor videoFramePts = torch::zeros({0}, torch::kLong);
+  if (!videoMessages.empty()) {
+     auto header = videoMetadata;
+     const auto& format = header.format.format.video;
+      int numVideoFrames = videoMessages.size();
+      int outHeight = format.height;
+      int outWidth = format.width;
+      int numChannels = 3; // decoder guarantees the default AV_PIX_FMT_RGB24
+      // videoFrame = torch::zeros(
+            // {numVideoFrames, outHeight, outWidth, numChannels}, torch::kByte);
+      // videoFramePts = torch::zeros({numVideoFrames}, torch::kLong);
+      // auto numberWrittenBytes = fillVideoTensorDBG(
+      //     videoMessages, videoFrame, videoFramePts, header.num, header.den);
+      // LOG(ERROR) << "Writen bytes: " << numberWrittenBytes;
+  }
+  return int64_t(videoFrames);
+}
+
 
 Video::~Video() {
 //   delete params; // does not have destructor
