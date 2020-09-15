@@ -606,9 +606,9 @@ int64_t Video::nextDebugNoReturn(std::string stream) {
       int outWidth = format.format.video.width;
       int numChannels = 3;
       outFrame = torch::zeros({outHeight, outWidth, numChannels}, torch::kByte);
-      expectedWrittenBytes = outHeight * outWidth * numChannels;
+      // expectedWrittenBytes = outHeight * outWidth * numChannels;
       
-      auto numberWrittenBytes = fillVideoTensor(out, outFrame, framePTS);
+      // auto numberWrittenBytes = fillVideoTensor(out, outFrame, framePTS);
       out.payload.reset();
       return int64_t(1);
     } else {
