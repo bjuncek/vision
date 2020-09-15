@@ -33,7 +33,6 @@ struct Video : torch::CustomClassHolder {
     // time in comination with any_frame settings
     double seekTS=-1; 
     bool doSeek=false;
-    torch::Tensor dummy;
     std::tuple<std::string, long> current_stream;
     std::map<std::string, std::vector<double>> streamFPS;
     std::map<std::string, std::vector<double>> streamDuration;
@@ -45,11 +44,19 @@ struct Video : torch::CustomClassHolder {
         std::vector<double> getDuration(std::string stream="") const;
         std::vector<double> getFPS(std::string stream="") const;
         void Seek(double ts, bool any_frame);
-        int64_t debugReadVideo();
-        int64_t debugReadVideoToTensor();
-        int64_t nextDebugNR(std::string stream);
-        torch::List<torch::Tensor> NextDebug(std::string stream);
-        torch::List<torch::Tensor> Next(std::string stream); //
+        torch::List<torch::Tensor> Next(std::string stream);
+        //
+        // debugging stuff
+        //
+        torch::Tensor NextNoPTS(std::string stream);
+        torch::List<torch::Tensor> NextListDummyTensor(std::string stream);
+        torch::Tensor NextDummyTensorOnly(std::string stream); // could be optimized out
+        int64_t nextDebugNoReturn(std::string stream);
+        torch::Tensor debugReadVideoTensor();
+        int64_t debugReadVideoNumFrames();
+        // Dummy test 
+        int64_t tbTest();
+        torch::Tensor tbTestTensor();
 
     private:
         void _getDecoderParams(int64_t videoStartS, int64_t getPtsOnly, std::string stream, long stream_id, bool all_streams, double seekFrameMarginUs); // this needs to be improved
