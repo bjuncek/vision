@@ -28,6 +28,7 @@ using namespace ffmpeg;
 struct Video : torch::CustomClassHolder {
     bool video_any_frame=false; // add this to input parameters
     bool succeeded=false; // this is decoder init stuff
+    torch::Tensor dummy = torch::zeros({0}, torch::kByte);
     // seekTS acts as a flag - if it's not set, next function simply
     // retruns the next frame. If it's set, we look at the global seek
     // time in comination with any_frame settings
@@ -54,6 +55,7 @@ struct Video : torch::CustomClassHolder {
         int64_t nextDebugNoReturn(std::string stream);
         torch::Tensor debugReadVideoTensor();
         int64_t debugReadVideoNumFrames();
+        torch::Tensor NextDummyTensorOnlyNoAlloc(std::string stream);
         // Dummy test 
         int64_t tbTest();
         torch::Tensor tbTestTensor();
@@ -73,8 +75,6 @@ struct Video : torch::CustomClassHolder {
         // torch::List<torch::Tensor> Peak(std::string stream="")
     protected:
         // AV container type (check in decoder for exact type)
-
-    
 
 }; // struct Video
 

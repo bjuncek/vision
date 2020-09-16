@@ -232,6 +232,7 @@ Video::Video(std::string videoPath, std::string stream, bool isReadFile) {
         int oh = header.format.format.video.height;
         int ow = header.format.format.video.width;
         int nc = 3;
+        dummy = torch::ones({nc, oh, ow}, torch::kByte);
       } else if (header.format.type == TYPE_AUDIO) {
         audioFPS.push_back(fps);
         audioDuration.push_back(duration);
@@ -563,10 +564,52 @@ torch::Tensor Video::NextDummyTensorOnly(std::string stream) {
     LOG(ERROR) << "Decoder run into a last iteration or has failed";
   }
   return outFrame;
+}
+
+
+torch::Tensor Video::NextDummyTensorOnlyNoAlloc(std::string stream) {
+
+  bool newInit = false;
+  if ((!stream.empty()) && (_parseStream(stream) != current_stream)) {
+      current_stream = _parseStream(stream);
+      newInit = true;
+  }
+
+  if ((seekTS != -1) && (doSeek == true)) {
+      newInit = true;
+      doSeek = false;
+  }
+
+  if (newInit){
+    succeeded = Video::_setCurrentStream();
+    if (succeeded) {
+      newInit = false;
+      // cout << "Reinitializing the decoder again \n";
+    }
+  }
+
+  // if failing to decode simply return 0 (note, maybe
+  // raise an exeption otherwise)
+  torch::Tensor framePTS = torch::zeros({1}, torch::kFloat);
+  torch::Tensor outFrame = torch::zeros({0}, torch::kByte);
+  // first decode the frame
+  DecoderOutputMessage out;
+  int64_t res = decoder.decode(&out, decoderTimeoutMs);
+  if (res == 0) {
+    auto header = out.header;
+    const auto& format = header.format;
+    // then initialize the output variables based on type
+    size_t expectedWrittenBytes = 0;
+    if (format.type == TYPE_VIDEO) {
+      outFrame = dummy;
+    }
+  } else {
+    LOG(ERROR) << "Decoder run into a last iteration or has failed";
+  }
+  return outFrame;
 
   
 }
-
 
 int64_t Video::nextDebugNoReturn(std::string stream) {
 
@@ -605,7 +648,7 @@ int64_t Video::nextDebugNoReturn(std::string stream) {
       int outHeight = format.format.video.height;
       int outWidth = format.format.video.width;
       int numChannels = 3;
-      outFrame = torch::zeros({outHeight, outWidth, numChannels}, torch::kByte);
+      // outFrame = torch::zeros({outHeight, outWidth, numChannels}, torch::kByte);
       // expectedWrittenBytes = outHeight * outWidth * numChannels;
       
       // auto numberWrittenBytes = fillVideoTensor(out, outFrame, framePTS);
