@@ -57,6 +57,7 @@ struct Video : torch::CustomClassHolder {
         int64_t debugReadVideoNumFrames();
         // torch::Tensor NextDummyTensorOnlyNoAlloc(std::string stream);
         torch::Tensor NextNoPTSWithMove(std::string stream);
+        torch::List<torch::Tensor> NextWithMove(std::string stream);
         // Dummy test 
         int64_t tbTest();
         torch::Tensor tbTestTensor();

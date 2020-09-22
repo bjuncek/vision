@@ -472,6 +472,106 @@ torch::Tensor Video::NextNoPTS(std::string stream) {
 }
 
 
+torch::List<torch::Tensor> Video::NextWithMove(std::string stream) {
+
+  bool newInit = false;
+  if ((!stream.empty()) && (_parseStream(stream) != current_stream)) {
+      current_stream = _parseStream(stream);
+      newInit = true;
+  }
+
+  if ((seekTS != -1) && (doSeek == true)) {
+      newInit = true;
+      doSeek = false;
+  }
+
+  if (newInit){
+    succeeded = Video::_setCurrentStream();
+    if (succeeded) {
+      newInit = false;
+      // cout << "Reinitializing the decoder again \n";
+    }
+  }
+
+  // if failing to decode simply return 0 (note, maybe
+  // raise an exeption otherwise)
+  torch::Tensor framePTS = torch::zeros({1}, torch::kFloat);
+  torch::Tensor outFrame = torch::zeros({0}, torch::kByte);
+
+  // first decode the frame
+  DecoderOutputMessage out;
+  int64_t res = decoder.decode(&out, decoderTimeoutMs);
+  if (res == 0) {
+    auto header = out.header;
+    const auto& format = header.format;
+
+    // then initialize the output variables based on type
+    size_t expectedWrittenBytes = 0;
+
+    // init PTS
+    float* framePtsData = framePTS.data_ptr<float>();
+    float pts_s = float(float(header.pts) * 1e-6);
+    framePtsData[0] = pts_s;
+
+    if (format.type == TYPE_VIDEO) {
+      int outHeight = format.format.video.height;
+      int outWidth = format.format.video.width;
+      int numChannels = 3;
+      outFrame = torch::zeros({outHeight, outWidth, numChannels}, torch::kByte);
+      expectedWrittenBytes = outHeight * outWidth * numChannels;
+      // std::cout << expectedWrittenBytes;
+
+      auto options = torch::TensorOptions().dtype(torch::kByte);
+      torch::IntArrayRef sizes = {outHeight, outWidth, numChannels};
+      // void *dataPayload = (void*) out.payload->data();
+      // if (out.payload->data()){
+      //   cout << "ISSUe arising";
+      // }
+      outFrame = torch::from_blob((void*) out.payload->data(), sizes, options);
+      // outFrame = torch::from_blob(const_cast<void*>(out.payload->data()), sizes, options);
+    }
+    // } else if (format.type == TYPE_AUDIO) {
+    //   int outAudioChannels = format.format.audio.channels;
+    //   int bytesPerSample = av_get_bytes_per_sample(
+    //       static_cast<AVSampleFormat>(format.format.audio.format));
+    //   int frameSizeTotal = out.payload->length();
+
+    //   CHECK_EQ(frameSizeTotal % (outAudioChannels * bytesPerSample), 0);
+    //   int numAudioSamples =
+    //       frameSizeTotal / (outAudioChannels * bytesPerSample);
+
+    //   outFrame =
+    //       torch::zeros({numAudioSamples, outAudioChannels}, torch::kFloat);
+      
+    //   auto options = torch::TensorOptions().dtype(torch::kFloat);
+    //   torch::IntArrayRef sizes = {numAudioSamples, outAudioChannels};
+    //   void *dataPayload = (void*) out.payload->data();
+    //   outFrame = torch::from_blob(dataPayload, sizes);
+    //   expectedWrittenBytes = numAudioSamples * outAudioChannels * sizeof(float);
+    // }
+
+    // std::cout << "Successfully allocated tensors to the dimension \n";
+    // if not in seek mode or only looking at the keyframes,
+    // return the immediate next frame
+    // if ((seekTS == -1) || (video_any_frame == false)) {
+    //   std::cout << "In non-seek mode stuff is happening \n";
+      
+    //   // if (format.type == TYPE_VIDEO) {
+    //   //   auto numberWrittenBytes = fillVideoTensor(out, outFrame, framePTS);
+    //   // } else {
+    //   //   auto numberWrittenBytes = fillAudioTensor(out, outFrame, framePTS);
+    //   // }
+    //   // out.payload.reset();
+    // }
+  } else {
+    LOG(ERROR) << "Decoder run into a last iteration or has failed";
+  }
+  torch::List<torch::Tensor> result;
+  result.push_back(outFrame);
+  result.push_back(framePTS);
+  return result;
+}
+
 
 torch::Tensor Video::NextNoPTSWithMove(std::string stream) {
 
