@@ -16,13 +16,11 @@ static auto registerVideo =
         .def("next_tensor", &Video::NextNoPTS)
         .def("next_list_dummy_tensor", &Video::NextListDummyTensor)
         .def("next_tensor_dummy_tensor", &Video::NextDummyTensorOnly)
-        .def("next_tensor_dummy_noalloc", &Video::NextDummyTensorOnlyNoAlloc)
+        .def("next_tensor_usemove", &Video::NextNoPTSWithMove)
         .def("next_int_numframes", &Video::nextDebugNoReturn)
         .def("fullvideo_tensor", &Video::debugReadVideoTensor)
         .def("fullvideo_numframes", &Video::debugReadVideoNumFrames)
         .def("tb", &Video::tbTest)
         .def("tbTensor", &Video::tbTestTensor);
-
-
 } //namespace
 #endif
