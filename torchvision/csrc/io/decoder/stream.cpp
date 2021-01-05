@@ -1,5 +1,7 @@
 #include "stream.h"
 #include <c10/util/Logging.h>
+
+#include <iostream>
 #include "util.h"
 
 namespace ffmpeg {
@@ -44,9 +46,14 @@ int Stream::openCodec(std::vector<DecoderMetadata>* metadata) {
                << ", avcodec_alloc_context3 failed";
     return AVERROR(ENOMEM);
   }
+  // LOG(ERROR) << " Codec name: " << codec->name << " ID " << codec->id << "
+  // Tag "
+  //            << codec->tag;
 
   int ret;
   // Copy codec parameters from input stream to output codec context
+  LOG(ERROR) << "Video Codec Param: resolution " << steam->codecpar->width
+             << " " << steam->codecpar->height;
   if ((ret = avcodec_parameters_to_context(codecCtx_, steam->codecpar)) < 0) {
     LOG(ERROR) << "LoggingUuid #" << loggingUuid_
                << ", avcodec_parameters_to_context failed";
@@ -61,6 +68,15 @@ int Stream::openCodec(std::vector<DecoderMetadata>* metadata) {
     codecCtx_ = nullptr;
     return ret;
   }
+
+  LOG(ERROR) << " Codec name POST OPENING: " << codec->name << " ID "
+             << codec->id;
+
+  LOG(ERROR) << " Codec CTX POST OPENING: " << codecCtx_->codec << " ID "
+             << codecCtx_->codec_id << " Tag " << codecCtx_->codec_tag
+             << " Flags " << codecCtx_->flags << " HW " << codecCtx_->height
+             << codecCtx_->width << " CodedHW " << codecCtx_->coded_height
+             << codecCtx_->coded_width;
 
   frame_ = av_frame_alloc();
 
@@ -93,6 +109,26 @@ int Stream::openCodec(std::vector<DecoderMetadata>* metadata) {
   return ret;
 }
 
+void Stream::save_gray_frame(
+    unsigned char* buf,
+    int wrap,
+    int xsize,
+    int ysize,
+    char* filename) {
+  FILE* f;
+  int i;
+  f = fopen(filename, "w");
+  // writing the minimal required header for a pgm file format
+  // portable graymap format ->
+  // https://en.wikipedia.org/wiki/Netpbm_format#PGM_example
+  fprintf(f, "P5\n%d %d\n%d\n", xsize, ysize, 255);
+
+  // writing line by line
+  for (i = 0; i < ysize; i++)
+    fwrite(buf + i * wrap, 1, xsize, f);
+  fclose(f);
+}
+
 int Stream::analyzePacket(const AVPacket* packet, bool* gotFrame) {
   int consumed = 0;
   int result = avcodec_send_packet(codecCtx_, packet);
@@ -113,6 +149,21 @@ int Stream::analyzePacket(const AVPacket* packet, bool* gotFrame) {
   }
 
   result = avcodec_receive_frame(codecCtx_, frame_);
+
+  char frame_filename[1024];
+  snprintf(
+      frame_filename,
+      sizeof(frame_filename),
+      "%s-%d.pgm",
+      "frame",
+      codecCtx_->frame_number);
+  // save a grayscale frame into a .pgm file
+  save_gray_frame(
+      frame_->data[0],
+      frame_->linesize[0],
+      frame_->width,
+      frame_->height,
+      frame_filename);
 
   if (result >= 0) {
     *gotFrame = true; // frame is available
