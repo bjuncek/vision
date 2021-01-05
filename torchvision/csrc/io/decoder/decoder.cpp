@@ -431,6 +431,20 @@ bool Decoder::openStreams(std::vector<DecoderMetadata>* metadata) {
                    << " open codec failed, stream_idx=" << i;
         return false;
       }
+      // AVCodecParameters* pLocalCodecParameters = NULL;
+      // pLocalCodecParameters = inputCtx_->streams[i]->codecpar;
+      LOG(ERROR) << "AVStream->time_base before open coded "
+                 << inputCtx_->streams[i]->time_base.num << " / "
+                 << inputCtx_->streams[i]->time_base.den;
+      LOG(ERROR) << "AVStream->r_frame_rate before open coded %d/%d"
+                 << inputCtx_->streams[i]->r_frame_rate.num
+                 << inputCtx_->streams[i]->r_frame_rate.den;
+      LOG(ERROR) << "AVStream->start_time %" PRId64
+                 << inputCtx_->streams[i]->start_time;
+      LOG(ERROR) << "AVStream->duration %" PRId64
+                 << inputCtx_->streams[i]->duration;
+      LOG(ERROR) << "finding the proper decoder (CODEC)";
+
       streams_.emplace(i, std::move(stream));
       inRange_.set(i, true);
     }
