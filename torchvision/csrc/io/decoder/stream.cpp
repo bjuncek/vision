@@ -201,6 +201,7 @@ int Stream::decodePacket(
     }
     *hasMsg = result > 0;
   }
+
   return consumed;
 }
 

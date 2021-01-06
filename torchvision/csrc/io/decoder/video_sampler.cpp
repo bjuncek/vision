@@ -119,21 +119,21 @@ bool VideoSampler::init(const SamplerParameters& params) {
     scaleFormat_ = params.out.video;
   }
 
-  VLOG(1) << "Input format #" << loggingUuid_ << ", width "
-          << params.in.video.width << ", height " << params.in.video.height
-          << ", format " << params.in.video.format << ", minDimension "
-          << params.in.video.minDimension << ", cropImage "
-          << params.in.video.cropImage;
-  VLOG(1) << "Scale format #" << loggingUuid_ << ", width "
-          << scaleFormat_.width << ", height " << scaleFormat_.height
-          << ", format " << scaleFormat_.format << ", minDimension "
-          << scaleFormat_.minDimension << ", cropImage "
-          << scaleFormat_.cropImage;
-  VLOG(1) << "Crop format #" << loggingUuid_ << ", width "
-          << params.out.video.width << ", height " << params.out.video.height
-          << ", format " << params.out.video.format << ", minDimension "
-          << params.out.video.minDimension << ", cropImage "
-          << params.out.video.cropImage;
+  LOG(ERROR) << "Input format #" << loggingUuid_ << ", width "
+             << params.in.video.width << ", height " << params.in.video.height
+             << ", format " << params.in.video.format << ", minDimension "
+             << params.in.video.minDimension << ", cropImage "
+             << params.in.video.cropImage;
+  LOG(ERROR) << "Scale format #" << loggingUuid_ << ", width "
+             << scaleFormat_.width << ", height " << scaleFormat_.height
+             << ", format " << scaleFormat_.format << ", minDimension "
+             << scaleFormat_.minDimension << ", cropImage "
+             << scaleFormat_.cropImage;
+  LOG(ERROR) << "Crop format #" << loggingUuid_ << ", width "
+             << params.out.video.width << ", height " << params.out.video.height
+             << ", format " << params.out.video.format << ", minDimension "
+             << params.out.video.minDimension << ", cropImage "
+             << params.out.video.cropImage;
 
   scaleContext_ = sws_getContext(
       params.in.video.width,

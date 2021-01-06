@@ -1,5 +1,6 @@
 #include "video_stream.h"
 #include <c10/util/Logging.h>
+#include "stream.h"
 #include "util.h"
 
 namespace ffmpeg {
@@ -99,19 +100,37 @@ int VideoStream::copyFrameBytes(ByteStorage* out, bool flush) {
       return -1;
     }
 
-    VLOG(1) << "Set input video sampler format"
-            << ", width: " << params.in.video.width
-            << ", height: " << params.in.video.height
-            << ", format: " << params.in.video.format
-            << " : output video sampler format"
-            << ", width: " << format_.format.video.width
-            << ", height: " << format_.format.video.height
-            << ", format: " << format_.format.video.format
-            << ", minDimension: " << format_.format.video.minDimension
-            << ", crop: " << format_.format.video.cropImage;
+    LOG(ERROR) << "Set input video sampler format"
+               << ", width: " << params.in.video.width
+               << ", height: " << params.in.video.height
+               << ", format: " << params.in.video.format
+               << " : output video sampler format"
+               << ", width: " << format_.format.video.width
+               << ", height: " << format_.format.video.height
+               << ", format: " << format_.format.video.format
+               << ", minDimension: " << format_.format.video.minDimension
+               << ", crop: " << format_.format.video.cropImage;
   }
 
-  return sampler_->sample(flush ? nullptr : frame_, out);
+  int resislav = sampler_->sample(flush ? nullptr : frame_, out);
+  LOG(ERROR) << "expected out after sampler: " << resislav;
+
+  char frame_filename[1024];
+  snprintf(
+      frame_filename,
+      sizeof(frame_filename),
+      "%s-%d.pgm",
+      "PostTransform_frame",
+      codecCtx_->frame_number);
+  // save a grayscale frame into a .pgm file
+  save_gray_frame(
+      (unsigned char*)out->data(),
+      frame_->linesize[0],
+      format_.format.video.width,
+      format_.format.video.height,
+      frame_filename);
+
+  return resislav;
 }
 
 void VideoStream::setHeader(DecoderHeader* header, bool flush) {

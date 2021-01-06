@@ -367,6 +367,7 @@ class TestVideo(unittest.TestCase):
         """
         Test that the outputs of the pyav and ffmpeg outputs are mostly the same
         """
+        print("testing stuff")
         for test_video, config in test_videos.items():
             full_path = os.path.join(VIDEO_DIR, test_video)
 
