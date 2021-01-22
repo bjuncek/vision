@@ -52,6 +52,8 @@ int transformImage(
     int lines[]) {
   int result;
   LOG(ERROR) << "In transformImage ";
+  // This sets up "planes" to point to "out" and are allocated in the
+  // same format
   if ((result = preparePlanes(outFormat, out, planes, lines)) < 0) {
     return result;
   }
