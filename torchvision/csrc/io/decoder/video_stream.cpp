@@ -3,6 +3,7 @@
 #include "stream.h"
 #include "util.h"
 
+using namespace std;
 namespace ffmpeg {
 
 namespace {
@@ -12,6 +13,35 @@ bool operator==(const VideoFormat& x, const AVFrame& y) {
 
 bool operator==(const VideoFormat& x, const AVCodecContext& y) {
   return x.width == y.width && x.height == y.height && x.format == y.pix_fmt;
+}
+
+void SaveAvFrame(AVFrame* avFrame) {
+  FILE* fDump = fopen("inVideoStreamTestStuff.binary", "ab");
+
+  uint32_t pitchY = avFrame->linesize[0];
+  uint32_t pitchU = avFrame->linesize[1];
+  uint32_t pitchV = avFrame->linesize[2];
+
+  uint8_t* avY = avFrame->data[0];
+  uint8_t* avU = avFrame->data[1];
+  uint8_t* avV = avFrame->data[2];
+
+  for (uint32_t i = 0; i < avFrame->height; i++) {
+    fwrite(avY, avFrame->width, 1, fDump);
+    avY += pitchY;
+  }
+
+  for (uint32_t i = 0; i < avFrame->height / 2; i++) {
+    fwrite(avU, avFrame->width / 2, 1, fDump);
+    avU += pitchU;
+  }
+
+  for (uint32_t i = 0; i < avFrame->height / 2; i++) {
+    fwrite(avV, avFrame->width / 2, 1, fDump);
+    avV += pitchV;
+  }
+
+  fclose(fDump);
 }
 
 VideoFormat& toVideoFormat(VideoFormat& x, const AVFrame& y) {
@@ -86,6 +116,9 @@ int VideoStream::copyFrameBytes(ByteStorage* out, bool flush) {
     sampler_ = std::make_unique<VideoSampler>(SWS_AREA, loggingUuid_);
   }
 
+  int fsize = avpicture_get_size(
+      (AVPixelFormat)frame_->format, frame_->width, frame_->height);
+
   // check if input format gets changed
   if (flush ? !(sampler_->getInputFormat().video == *codecCtx_)
             : !(sampler_->getInputFormat().video == *frame_)) {
@@ -100,6 +133,14 @@ int VideoStream::copyFrameBytes(ByteStorage* out, bool flush) {
       return -1;
     }
 
+    int fsize2 = avpicture_get_size(
+        (AVPixelFormat)format_.format.video.format,
+        params.in.video.width,
+        params.in.video.height);
+
+    LOG(ERROR) << "Extimated FSIZE of FRAME format: " << fsize;
+    LOG(ERROR) << "Extimated FSIZE of FORMAT format : " << fsize2;
+
     LOG(ERROR) << "Set input video sampler format"
                << ", width: " << params.in.video.width
                << ", height: " << params.in.video.height
@@ -109,26 +150,40 @@ int VideoStream::copyFrameBytes(ByteStorage* out, bool flush) {
                << ", height: " << format_.format.video.height
                << ", format: " << format_.format.video.format
                << ", minDimension: " << format_.format.video.minDimension
+               << ", linesize (frame): " << frame_->linesize[0]
                << ", crop: " << format_.format.video.cropImage;
   }
 
   int resislav = sampler_->sample(flush ? nullptr : frame_, out);
   LOG(ERROR) << "expected out after sampler: " << resislav;
+  LOG(ERROR) << "FSIZE of the OUT: " << out->length();
 
-  char frame_filename[1024];
-  snprintf(
-      frame_filename,
-      sizeof(frame_filename),
-      "%s-%d.pgm",
-      "PostTransform_frame",
-      codecCtx_->frame_number);
-  // save a grayscale frame into a .pgm file
-  save_gray_frame(
-      (unsigned char*)out->data(),
-      frame_->linesize[0],
-      format_.format.video.width,
-      format_.format.video.height,
-      frame_filename);
+  // char frame_filename[1024];
+  // snprintf(
+  //     frame_filename,
+  //     sizeof(frame_filename),
+  //     "%s-%d.pgm",
+  //     "PostTransform_frame",
+  //     codecCtx_->frame_number);
+  // // save a grayscale frame into a .pgm file
+  // save_gray_frame(
+  //     (unsigned char*)out->data(),
+  //     frame_->linesize[0],
+  //     format_.format.video.width,
+  //     format_.format.video.height,
+  //     frame_filename);
+
+  // FILE* pFile2;
+
+  // pFile2 = fopen("inVideoStreamPreTransform.binary", "wb");
+  // fwrite(frame_->data[0], 1, fsize, pFile2);
+  // fclose(pFile2);
+  SaveAvFrame(frame_);
+
+  FILE* pFile;
+  pFile = fopen("inVideoStreamPostTransform.binary", "wb");
+  fwrite(out->data(), 1, out->length(), pFile);
+  fclose(pFile);
 
   return resislav;
 }

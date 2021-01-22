@@ -7,7 +7,7 @@ namespace video {
 
 namespace {
 
-const size_t decoderTimeoutMs = 600000;
+const size_t decoderTimeoutMs = 100000;
 const AVPixelFormat defaultVideoPixelFormat = AV_PIX_FMT_RGB24;
 const AVSampleFormat defaultAudioSampleFormat = AV_SAMPLE_FMT_FLT;
 
@@ -15,6 +15,7 @@ const AVSampleFormat defaultAudioSampleFormat = AV_SAMPLE_FMT_FLT;
 template <typename T>
 size_t fillTensorList(DecoderOutputMessage& msgs, torch::Tensor& frame) {
   const auto& msg = msgs;
+
   T* frameData = frame.numel() > 0 ? frame.data_ptr<T>() : nullptr;
   if (frameData) {
     auto sizeInBytes = msg.payload->length();
@@ -24,6 +25,11 @@ size_t fillTensorList(DecoderOutputMessage& msgs, torch::Tensor& frame) {
 }
 
 size_t fillVideoTensor(DecoderOutputMessage& msgs, torch::Tensor& videoFrame) {
+  FILE* pFile;
+  pFile = fopen("inVideoIO.binary", "wb");
+  fwrite(msgs.payload->data(), 1, msgs.payload->length(), pFile);
+  fclose(pFile);
+
   return fillTensorList<uint8_t>(msgs, videoFrame);
 }
 

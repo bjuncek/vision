@@ -644,6 +644,10 @@ int Decoder::processPacket(
       push(std::move(msg));
     }
   }
+  // FILE* pFile;
+  // pFile = fopen("inDecoderProcessPacket.binary", "wb");
+  // fwrite(msg.payload->data(), 1, msg.payload->length(), pFile);
+  // fclose(pFile);
   return result;
 }
 

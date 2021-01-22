@@ -1,0 +1,1266 @@
+Building wheel torchvision-0.9.0a0+31b6792
+PNG found: True
+libpng version: 1.6.37
+Building torchvision with PNG image support
+libpng include path: /home/bjuncek/.conda/envs/test/include/libpng16
+Running build on conda-build: False
+Running build on conda: True
+JPEG found: True
+Building torchvision with JPEG image support
+FFmpeg found: True
+ffmpeg include path: ['/home/bjuncek/.conda/envs/test/include', '/home/bjuncek/.conda/envs/test/include/x86_64-linux-gnu']
+ffmpeg library_dir: ['/home/bjuncek/.conda/envs/test/lib', '/home/bjuncek/.conda/envs/test/lib/x86_64-linux-gnu']
+running build
+running build_py
+copying torchvision/version.py -> build/lib.linux-x86_64-3.8/torchvision
+running build_ext
+building 'torchvision._C' extension
+Emitting ninja build file /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/build.ninja...
+Compiling objects...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/vision.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/vision.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/vision.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[2/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/deform_conv2d_kernel.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/deform_conv2d_kernel.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/deform_conv2d_kernel.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[3/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/nms_kernel.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/nms_kernel.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/nms_kernel.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[4/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/roi_pool_kernel.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/roi_pool_kernel.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/roi_pool_kernel.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[5/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/ps_roi_align_kernel.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/ps_roi_align_kernel.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/ps_roi_align_kernel.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[6/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/ps_roi_pool_kernel.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/ps_roi_pool_kernel.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/ps_roi_pool_kernel.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[7/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/ps_roi_align_kernel.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/ps_roi_align_kernel.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/ps_roi_align_kernel.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[8/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/deform_conv2d_kernel.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/deform_conv2d_kernel.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/deform_conv2d_kernel.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[9/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/roi_pool_kernel.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/roi_pool_kernel.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/roi_pool_kernel.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[10/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/ps_roi_pool_kernel.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/ps_roi_pool_kernel.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/ps_roi_pool_kernel.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[11/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/nms.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/nms.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/nms.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[12/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/ps_roi_pool.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/ps_roi_pool.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/ps_roi_pool.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[13/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/roi_align_kernel.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/roi_align_kernel.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/roi_align_kernel.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[14/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/roi_align_kernel.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/roi_align_kernel.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/roi_align_kernel.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[15/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/roi_pool.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/roi_pool.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/roi_pool.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[16/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/deform_conv2d.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/deform_conv2d.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/deform_conv2d.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[17/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/nms_kernel.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/nms_kernel.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/nms_kernel.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[18/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/ps_roi_align.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/ps_roi_align.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/ps_roi_align.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[19/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/ps_roi_pool_kernel.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/ps_roi_pool_kernel.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/ps_roi_pool_kernel.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+In file included from /home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include/torch/autograd.h:4:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/ps_roi_pool_kernel.cpp:3:
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h: In instantiation of ‘torch::autograd::variable_list torch::autograd::CppNode<T>::apply(torch::autograd::variable_list&&) [with T = vision::ops::{anonymous}::PSROIPoolBackwardFunction; torch::autograd::variable_list = std::vector<at::Tensor>]’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/ps_roi_pool_kernel.cpp:147:1:   required from here
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:279:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (num_outputs > num_forward_inputs) {
+       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:290:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (num_outputs != num_forward_inputs) {
+       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:300:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i = 0; i < num_outputs; ++i) {
+                   ~~^~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h: In instantiation of ‘torch::autograd::variable_list torch::autograd::CppNode<T>::apply(torch::autograd::variable_list&&) [with T = vision::ops::{anonymous}::PSROIPoolFunction; torch::autograd::variable_list = std::vector<at::Tensor>]’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/ps_roi_pool_kernel.cpp:147:1:   required from here
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:279:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (num_outputs > num_forward_inputs) {
+       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:290:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (num_outputs != num_forward_inputs) {
+       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:300:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i = 0; i < num_outputs; ++i) {
+                   ~~^~~~~~~~~~~~~
+[20/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/roi_align.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/roi_align.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/roi_align.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[21/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/roi_align_kernel.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/roi_align_kernel.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/roi_align_kernel.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+In file included from /home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include/torch/autograd.h:4:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/roi_align_kernel.cpp:3:
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h: In instantiation of ‘torch::autograd::variable_list torch::autograd::CppNode<T>::apply(torch::autograd::variable_list&&) [with T = vision::ops::{anonymous}::ROIAlignBackwardFunction; torch::autograd::variable_list = std::vector<at::Tensor>]’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/roi_align_kernel.cpp:162:1:   required from here
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:279:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (num_outputs > num_forward_inputs) {
+       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:290:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (num_outputs != num_forward_inputs) {
+       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:300:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i = 0; i < num_outputs; ++i) {
+                   ~~^~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h: In instantiation of ‘torch::autograd::variable_list torch::autograd::CppNode<T>::apply(torch::autograd::variable_list&&) [with T = vision::ops::{anonymous}::ROIAlignFunction; torch::autograd::variable_list = std::vector<at::Tensor>]’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/roi_align_kernel.cpp:162:1:   required from here
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:279:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (num_outputs > num_forward_inputs) {
+       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:290:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (num_outputs != num_forward_inputs) {
+       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:300:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i = 0; i < num_outputs; ++i) {
+                   ~~^~~~~~~~~~~~~
+[22/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/roi_pool_kernel.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/roi_pool_kernel.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/roi_pool_kernel.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+In file included from /home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include/torch/autograd.h:4:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/roi_pool_kernel.cpp:3:
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h: In instantiation of ‘torch::autograd::variable_list torch::autograd::CppNode<T>::apply(torch::autograd::variable_list&&) [with T = vision::ops::{anonymous}::ROIPoolBackwardFunction; torch::autograd::variable_list = std::vector<at::Tensor>]’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/roi_pool_kernel.cpp:147:1:   required from here
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:279:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (num_outputs > num_forward_inputs) {
+       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:290:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (num_outputs != num_forward_inputs) {
+       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:300:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i = 0; i < num_outputs; ++i) {
+                   ~~^~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h: In instantiation of ‘torch::autograd::variable_list torch::autograd::CppNode<T>::apply(torch::autograd::variable_list&&) [with T = vision::ops::{anonymous}::ROIPoolFunction; torch::autograd::variable_list = std::vector<at::Tensor>]’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/roi_pool_kernel.cpp:147:1:   required from here
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:279:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (num_outputs > num_forward_inputs) {
+       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:290:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (num_outputs != num_forward_inputs) {
+       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:300:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i = 0; i < num_outputs; ++i) {
+                   ~~^~~~~~~~~~~~~
+[23/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/deform_conv2d_kernel.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/deform_conv2d_kernel.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/deform_conv2d_kernel.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+In file included from /home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include/torch/autograd.h:4:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/deform_conv2d_kernel.cpp:3:
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h: In instantiation of ‘torch::autograd::variable_list torch::autograd::CppNode<T>::apply(torch::autograd::variable_list&&) [with T = vision::ops::{anonymous}::DeformConv2dBackwardFunction; torch::autograd::variable_list = std::vector<at::Tensor>]’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/deform_conv2d_kernel.cpp:262:1:   required from here
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:279:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (num_outputs > num_forward_inputs) {
+       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:290:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (num_outputs != num_forward_inputs) {
+       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:300:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i = 0; i < num_outputs; ++i) {
+                   ~~^~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h: In instantiation of ‘torch::autograd::variable_list torch::autograd::CppNode<T>::apply(torch::autograd::variable_list&&) [with T = vision::ops::{anonymous}::DeformConv2dFunction; torch::autograd::variable_list = std::vector<at::Tensor>]’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/deform_conv2d_kernel.cpp:262:1:   required from here
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:279:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (num_outputs > num_forward_inputs) {
+       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:290:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (num_outputs != num_forward_inputs) {
+       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:300:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i = 0; i < num_outputs; ++i) {
+                   ~~^~~~~~~~~~~~~
+[24/30] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/ps_roi_align_kernel.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/ps_roi_align_kernel.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/ps_roi_align_kernel.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+In file included from /home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include/torch/autograd.h:4:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/ps_roi_align_kernel.cpp:3:
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h: In instantiation of ‘torch::autograd::variable_list torch::autograd::CppNode<T>::apply(torch::autograd::variable_list&&) [with T = vision::ops::{anonymous}::PSROIAlignBackwardFunction; torch::autograd::variable_list = std::vector<at::Tensor>]’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/ps_roi_align_kernel.cpp:162:1:   required from here
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:279:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (num_outputs > num_forward_inputs) {
+       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:290:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (num_outputs != num_forward_inputs) {
+       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:300:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i = 0; i < num_outputs; ++i) {
+                   ~~^~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h: In instantiation of ‘torch::autograd::variable_list torch::autograd::CppNode<T>::apply(torch::autograd::variable_list&&) [with T = vision::ops::{anonymous}::PSROIAlignFunction; torch::autograd::variable_list = std::vector<at::Tensor>]’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/ps_roi_align_kernel.cpp:162:1:   required from here
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:279:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (num_outputs > num_forward_inputs) {
+       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:290:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (num_outputs != num_forward_inputs) {
+       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/autograd/custom_function.h:300:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i = 0; i < num_outputs; ++i) {
+                   ~~^~~~~~~~~~~~~
+[25/30] /usr/local/cuda/bin/nvcc --generate-dependencies-with-compile --dependency-output /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/roi_pool_kernel.o.d -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/roi_pool_kernel.cu -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/roi_pool_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -gencode=arch=compute_75,code=compute_75 -gencode=arch=compute_75,code=sm_75 -std=c++14
+[26/30] /usr/local/cuda/bin/nvcc --generate-dependencies-with-compile --dependency-output /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/nms_kernel.o.d -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/nms_kernel.cu -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/nms_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -gencode=arch=compute_75,code=compute_75 -gencode=arch=compute_75,code=sm_75 -std=c++14
+[27/30] /usr/local/cuda/bin/nvcc --generate-dependencies-with-compile --dependency-output /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/ps_roi_pool_kernel.o.d -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/ps_roi_pool_kernel.cu -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/ps_roi_pool_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -gencode=arch=compute_75,code=compute_75 -gencode=arch=compute_75,code=sm_75 -std=c++14
+[28/30] /usr/local/cuda/bin/nvcc --generate-dependencies-with-compile --dependency-output /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/ps_roi_align_kernel.o.d -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/ps_roi_align_kernel.cu -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/ps_roi_align_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -gencode=arch=compute_75,code=compute_75 -gencode=arch=compute_75,code=sm_75 -std=c++14
+[29/30] /usr/local/cuda/bin/nvcc --generate-dependencies-with-compile --dependency-output /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/deform_conv2d_kernel.o.d -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/deform_conv2d_kernel.cu -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/deform_conv2d_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -gencode=arch=compute_75,code=compute_75 -gencode=arch=compute_75,code=sm_75 -std=c++14
+[30/30] /usr/local/cuda/bin/nvcc --generate-dependencies-with-compile --dependency-output /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/roi_align_kernel.o.d -DWITH_CUDA -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/roi_align_kernel.cu -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/roi_align_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=_C -D_GLIBCXX_USE_CXX11_ABI=1 -gencode=arch=compute_75,code=compute_75 -gencode=arch=compute_75,code=sm_75 -std=c++14
+g++ -pthread -shared -B /home/bjuncek/.conda/envs/test/compiler_compat -L/home/bjuncek/.conda/envs/test/lib -Wl,-rpath=/home/bjuncek/.conda/envs/test/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/vision.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/ps_roi_pool.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/roi_pool.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/nms.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/ps_roi_align.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/deform_conv2d.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/roi_align.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/ps_roi_align_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/ps_roi_pool_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/deform_conv2d_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/roi_pool_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autograd/roi_align_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/ps_roi_pool_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/roi_pool_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/deform_conv2d_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/ps_roi_align_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/nms_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cpu/roi_align_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/roi_pool_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/nms_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/roi_align_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/deform_conv2d_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/ps_roi_pool_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/cuda/ps_roi_align_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/deform_conv2d_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/nms_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/roi_align_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/ps_roi_align_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/ps_roi_pool_kernel.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/ops/autocast/roi_pool_kernel.o -L/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/lib -L/usr/local/cuda/lib64 -lc10 -ltorch -ltorch_cpu -ltorch_python -lcudart -lc10_cuda -ltorch_cuda -o build/lib.linux-x86_64-3.8/torchvision/_C.so
+building 'torchvision.image' extension
+Emitting ninja build file /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/build.ninja...
+Compiling objects...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/8] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/jpegcommon.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DPNG_FOUND=1 -DJPEG_FOUND=1 -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include/libpng16 -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/jpegcommon.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/jpegcommon.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=image -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[2/8] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/readjpeg_cpu.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DPNG_FOUND=1 -DJPEG_FOUND=1 -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include/libpng16 -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/readjpeg_cpu.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/readjpeg_cpu.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=image -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/readjpeg_cpu.cpp: In function ‘void torch_jpeg_skip_input_data(j_decompress_ptr, long int)’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/readjpeg_cpu.cpp:32:32: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (src->pub.bytes_in_buffer < num_bytes) {
+       ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+[3/8] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/read_image_cpu.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DPNG_FOUND=1 -DJPEG_FOUND=1 -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include/libpng16 -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/read_image_cpu.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/read_image_cpu.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=image -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[4/8] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/read_write_file_cpu.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DPNG_FOUND=1 -DJPEG_FOUND=1 -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include/libpng16 -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/read_write_file_cpu.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/read_write_file_cpu.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=image -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[5/8] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/readpng_cpu.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DPNG_FOUND=1 -DJPEG_FOUND=1 -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include/libpng16 -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/readpng_cpu.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/readpng_cpu.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=image -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[6/8] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/writepng_cpu.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DPNG_FOUND=1 -DJPEG_FOUND=1 -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include/libpng16 -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/writepng_cpu.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/writepng_cpu.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=image -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/writepng_cpu.cpp: In function ‘at::Tensor encodePNG(const at::Tensor&, int64_t)’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/writepng_cpu.cpp:150:24: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (size_t y = 0; y < height; ++y) {
+                      ~~^~~~~~~~
+[7/8] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/writejpeg_cpu.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DPNG_FOUND=1 -DJPEG_FOUND=1 -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include/libpng16 -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/writejpeg_cpu.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/writejpeg_cpu.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=image -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[8/8] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/image.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DPNG_FOUND=1 -DJPEG_FOUND=1 -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include/libpng16 -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/image.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/image.o -fopenmp -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=image -D_GLIBCXX_USE_CXX11_ABI=1 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+g++ -pthread -shared -B /home/bjuncek/.conda/envs/test/compiler_compat -L/home/bjuncek/.conda/envs/test/lib -Wl,-rpath=/home/bjuncek/.conda/envs/test/lib -Wl,--no-as-needed -Wl,--sysroot=/ /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/jpegcommon.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/image.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/read_write_file_cpu.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/writejpeg_cpu.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/read_image_cpu.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/readpng_cpu.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/writepng_cpu.o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/image/cpu/readjpeg_cpu.o -L/home/bjuncek/.conda/envs/test/lib -L/home/bjuncek/.conda/envs/test/lib -L/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/lib -L/usr/local/cuda/lib64 -lpng -ljpeg -lc10 -ltorch -ltorch_cpu -ltorch_python -lcudart -lc10_cuda -ltorch_cuda -o build/lib.linux-x86_64-3.8/torchvision/image.so
+building 'torchvision.video_reader' extension
+Emitting ninja build file /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/build.ninja...
+Compiling objects...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/17] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/time_keeper.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/.conda/envs/test/include/x86_64-linux-gnu -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/time_keeper.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/time_keeper.o -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=video_reader -D_GLIBCXX_USE_CXX11_ABI=1
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[2/17] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/cc_stream.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/.conda/envs/test/include/x86_64-linux-gnu -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/cc_stream.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/cc_stream.o -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=video_reader -D_GLIBCXX_USE_CXX11_ABI=1
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[3/17] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/subtitle_stream.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/.conda/envs/test/include/x86_64-linux-gnu -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/subtitle_stream.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/subtitle_stream.o -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=video_reader -D_GLIBCXX_USE_CXX11_ABI=1
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[4/17] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/seekable_buffer.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/.conda/envs/test/include/x86_64-linux-gnu -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/seekable_buffer.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/seekable_buffer.o -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=video_reader -D_GLIBCXX_USE_CXX11_ABI=1
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/seekable_buffer.cpp: In member function ‘bool ffmpeg::SeekableBuffer::readBytes(ffmpeg::DecoderInCallback&, size_t, uint64_t)’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/seekable_buffer.cpp:69:24: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   while (!eof_ && end_ < maxBytes && (hasTime = watcher())) {
+                   ~~~~~^~~~~~~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/seekable_buffer.cpp:74:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+       if (end_ == buffer_.size()) {
+           ~~~~~^~~~~~~~~~~~~~~~~
+[5/17] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/memory_buffer.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/.conda/envs/test/include/x86_64-linux-gnu -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/memory_buffer.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/memory_buffer.o -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=video_reader -D_GLIBCXX_USE_CXX11_ABI=1
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[6/17] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/audio_sampler.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/.conda/envs/test/include/x86_64-linux-gnu -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/audio_sampler.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/audio_sampler.o -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=video_reader -D_GLIBCXX_USE_CXX11_ABI=1
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[7/17] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_sampler.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/.conda/envs/test/include/x86_64-linux-gnu -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_sampler.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_sampler.o -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=video_reader -D_GLIBCXX_USE_CXX11_ABI=1
+FAILED: /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_sampler.o 
+c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_sampler.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/.conda/envs/test/include/x86_64-linux-gnu -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_sampler.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_sampler.o -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=video_reader -D_GLIBCXX_USE_CXX11_ABI=1
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_sampler.cpp: In function ‘int ffmpeg::{anonymous}::transformImage(SwsContext*, const uint8_t* const*, int*, ffmpeg::VideoFormat, ffmpeg::VideoFormat, uint8_t*, uint8_t**, int*)’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_sampler.cpp:70:72: error: cannot convert ‘uint8_t* {aka unsigned char*}’ to ‘uint8_t* const* {aka unsigned char* const*}’ for argument ‘6’ to ‘int sws_scale(SwsContext*, const uint8_t* const*, const int*, int, int, uint8_t* const*, const int*)’
+            context, srcSlice, srcStride, 0, inFormat.height, out, lines)) < 0) {
+                                                                        ^
+[8/17] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/subtitle_sampler.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/.conda/envs/test/include/x86_64-linux-gnu -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/subtitle_sampler.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/subtitle_sampler.o -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=video_reader -D_GLIBCXX_USE_CXX11_ABI=1
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[9/17] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/sync_decoder.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/.conda/envs/test/include/x86_64-linux-gnu -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/sync_decoder.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/sync_decoder.o -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=video_reader -D_GLIBCXX_USE_CXX11_ABI=1
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[10/17] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/stream.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/.conda/envs/test/include/x86_64-linux-gnu -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/stream.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/stream.o -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=video_reader -D_GLIBCXX_USE_CXX11_ABI=1
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/stream.cpp: In member function ‘virtual void ffmpeg::Stream::setFramePts(ffmpeg::DecoderHeader*, bool)’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/stream.cpp:287:60: warning: ‘int64_t av_frame_get_best_effort_timestamp(const AVFrame*)’ is deprecated [-Wdeprecated-declarations]
+     header->pts = av_frame_get_best_effort_timestamp(frame_);
+                                                            ^
+In file included from /home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:38:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/stream.h:4,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/stream.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavutil/frame.h:683:9: note: declared here
+ int64_t av_frame_get_best_effort_timestamp(const AVFrame *frame);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[11/17] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/audio_stream.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/.conda/envs/test/include/x86_64-linux-gnu -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/audio_stream.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/audio_stream.o -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=video_reader -D_GLIBCXX_USE_CXX11_ABI=1
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/audio_stream.cpp: In function ‘bool ffmpeg::{anonymous}::operator==(const ffmpeg::AudioFormat&, const AVFrame&)’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/audio_stream.cpp:10:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   return x.samples == y.sample_rate && x.channels == y.channels &&
+          ~~~~~~~~~~^~~~~~~~~~~~~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/audio_stream.cpp:10:51: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   return x.samples == y.sample_rate && x.channels == y.channels &&
+                                        ~~~~~~~~~~~^~~~~~~~~~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/audio_stream.cpp: In function ‘bool ffmpeg::{anonymous}::operator==(const ffmpeg::AudioFormat&, const AVCodecContext&)’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/audio_stream.cpp:15:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   return x.samples == y.sample_rate && x.channels == y.channels &&
+          ~~~~~~~~~~^~~~~~~~~~~~~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/audio_stream.cpp:15:51: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   return x.samples == y.sample_rate && x.channels == y.channels &&
+                                        ~~~~~~~~~~~^~~~~~~~~~~~~
+[12/17] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_stream.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/.conda/envs/test/include/x86_64-linux-gnu -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_stream.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_stream.o -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=video_reader -D_GLIBCXX_USE_CXX11_ABI=1
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_stream.cpp: In function ‘bool ffmpeg::{anonymous}::operator==(const ffmpeg::VideoFormat&, const AVFrame&)’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_stream.cpp:11:18: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   return x.width == y.width && x.height == y.height && x.format == y.format;
+          ~~~~~~~~^~~~~~~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_stream.cpp:11:41: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   return x.width == y.width && x.height == y.height && x.format == y.format;
+                                ~~~~~~~~~^~~~~~~~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_stream.cpp: In function ‘bool ffmpeg::{anonymous}::operator==(const ffmpeg::VideoFormat&, const AVCodecContext&)’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_stream.cpp:15:18: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   return x.width == y.width && x.height == y.height && x.format == y.pix_fmt;
+          ~~~~~~~~^~~~~~~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_stream.cpp:15:41: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   return x.width == y.width && x.height == y.height && x.format == y.pix_fmt;
+                                ~~~~~~~~~^~~~~~~~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_stream.cpp: In function ‘void ffmpeg::{anonymous}::SaveAvFrame(AVFrame*)’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_stream.cpp:29:26: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (uint32_t i = 0; i < avFrame->height; i++) {
+                        ~~^~~~~~~~~~~~~~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_stream.cpp:34:26: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (uint32_t i = 0; i < avFrame->height / 2; i++) {
+                        ~~^~~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_stream.cpp:39:26: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (uint32_t i = 0; i < avFrame->height / 2; i++) {
+                        ~~^~~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_stream.cpp: In member function ‘virtual int ffmpeg::VideoStream::copyFrameBytes(ffmpeg::ByteStorage*, bool)’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_stream.cpp:120:67: warning: ‘int avpicture_get_size(AVPixelFormat, int, int)’ is deprecated [-Wdeprecated-declarations]
+       (AVPixelFormat)frame_->format, frame_->width, frame_->height);
+                                                                   ^
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/stream.h:4,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_stream.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_stream.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:5510:5: note: declared here
+ int avpicture_get_size(enum AVPixelFormat pix_fmt, int width, int height);
+     ^~~~~~~~~~~~~~~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_stream.cpp:139:31: warning: ‘int avpicture_get_size(AVPixelFormat, int, int)’ is deprecated [-Wdeprecated-declarations]
+         params.in.video.height);
+                               ^
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/stream.h:4,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_stream.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/video_stream.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:5510:5: note: declared here
+ int avpicture_get_size(enum AVPixelFormat pix_fmt, int width, int height);
+     ^~~~~~~~~~~~~~~~~~
+[13/17] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/.conda/envs/test/include/x86_64-linux-gnu -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.o -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=video_reader -D_GLIBCXX_USE_CXX11_ABI=1
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp: In lambda function:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:52:25: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           s += sizeof(y.pict.linesize[i]);
+                         ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:52:25: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           s += sizeof(y.pict.linesize[i]);
+                         ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:52:25: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           s += sizeof(y.pict.linesize[i]);
+                         ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:52:30: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           s += sizeof(y.pict.linesize[i]);
+                              ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:52:30: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           s += sizeof(y.pict.linesize[i]);
+                              ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:52:30: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           s += sizeof(y.pict.linesize[i]);
+                              ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:53:18: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           s += y.pict.linesize[i];
+                  ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:53:18: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           s += y.pict.linesize[i];
+                  ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:53:18: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           s += y.pict.linesize[i];
+                  ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:53:23: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           s += y.pict.linesize[i];
+                       ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:53:23: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           s += y.pict.linesize[i];
+                       ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:53:23: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           s += y.pict.linesize[i];
+                       ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp: In lambda function:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:96:41: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           if (!serializeItem(d, l, p, x.pict.linesize[i])) {
+                                         ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:96:41: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           if (!serializeItem(d, l, p, x.pict.linesize[i])) {
+                                         ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:96:41: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           if (!serializeItem(d, l, p, x.pict.linesize[i])) {
+                                         ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:96:46: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           if (!serializeItem(d, l, p, x.pict.linesize[i])) {
+                                              ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:96:46: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           if (!serializeItem(d, l, p, x.pict.linesize[i])) {
+                                              ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:96:46: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           if (!serializeItem(d, l, p, x.pict.linesize[i])) {
+                                              ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:99:21: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           if (p + x.pict.linesize[i] > l) {
+                     ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:99:21: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           if (p + x.pict.linesize[i] > l) {
+                     ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:99:21: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           if (p + x.pict.linesize[i] > l) {
+                     ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:99:26: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           if (p + x.pict.linesize[i] > l) {
+                          ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:99:26: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           if (p + x.pict.linesize[i] > l) {
+                          ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:99:26: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           if (p + x.pict.linesize[i] > l) {
+                          ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:102:27: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           memcpy(d + p, x.pict.data[i], x.pict.linesize[i]);
+                           ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:102:27: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           memcpy(d + p, x.pict.data[i], x.pict.linesize[i]);
+                           ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:102:27: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           memcpy(d + p, x.pict.data[i], x.pict.linesize[i]);
+                           ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:102:32: warning: ‘AVPicture::data’ is deprecated [-Wdeprecated-declarations]
+           memcpy(d + p, x.pict.data[i], x.pict.linesize[i]);
+                                ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3868:39: note: declared here
+     uint8_t *data[AV_NUM_DATA_POINTERS];    ///< pointers to the image data planes
+                                       ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:102:32: warning: ‘AVPicture::data’ is deprecated [-Wdeprecated-declarations]
+           memcpy(d + p, x.pict.data[i], x.pict.linesize[i]);
+                                ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3868:39: note: declared here
+     uint8_t *data[AV_NUM_DATA_POINTERS];    ///< pointers to the image data planes
+                                       ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:102:32: warning: ‘AVPicture::data’ is deprecated [-Wdeprecated-declarations]
+           memcpy(d + p, x.pict.data[i], x.pict.linesize[i]);
+                                ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3868:39: note: declared here
+     uint8_t *data[AV_NUM_DATA_POINTERS];    ///< pointers to the image data planes
+                                       ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:102:43: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           memcpy(d + p, x.pict.data[i], x.pict.linesize[i]);
+                                           ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:102:43: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           memcpy(d + p, x.pict.data[i], x.pict.linesize[i]);
+                                           ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:102:43: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           memcpy(d + p, x.pict.data[i], x.pict.linesize[i]);
+                                           ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:102:48: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           memcpy(d + p, x.pict.data[i], x.pict.linesize[i]);
+                                                ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:102:48: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           memcpy(d + p, x.pict.data[i], x.pict.linesize[i]);
+                                                ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:102:48: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           memcpy(d + p, x.pict.data[i], x.pict.linesize[i]);
+                                                ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:103:18: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           p += x.pict.linesize[i];
+                  ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:103:18: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           p += x.pict.linesize[i];
+                  ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:103:18: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           p += x.pict.linesize[i];
+                  ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:103:23: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           p += x.pict.linesize[i];
+                       ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:103:23: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           p += x.pict.linesize[i];
+                       ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:103:23: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           p += x.pict.linesize[i];
+                       ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp: In lambda function:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:175:43: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           if (!deserializeItem(y, l, p, x.pict.linesize[i])) {
+                                           ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:175:43: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           if (!deserializeItem(y, l, p, x.pict.linesize[i])) {
+                                           ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:175:43: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           if (!deserializeItem(y, l, p, x.pict.linesize[i])) {
+                                           ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:175:48: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           if (!deserializeItem(y, l, p, x.pict.linesize[i])) {
+                                                ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:175:48: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           if (!deserializeItem(y, l, p, x.pict.linesize[i])) {
+                                                ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:175:48: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           if (!deserializeItem(y, l, p, x.pict.linesize[i])) {
+                                                ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:178:21: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           if (p + x.pict.linesize[i] > l) {
+                     ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:178:21: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           if (p + x.pict.linesize[i] > l) {
+                     ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:178:21: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           if (p + x.pict.linesize[i] > l) {
+                     ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:178:26: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           if (p + x.pict.linesize[i] > l) {
+                          ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:178:26: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           if (p + x.pict.linesize[i] > l) {
+                          ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:178:26: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           if (p + x.pict.linesize[i] > l) {
+                          ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:181:13: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           x.pict.data[i] = (uint8_t*)av_malloc(x.pict.linesize[i]);
+             ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:181:13: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           x.pict.data[i] = (uint8_t*)av_malloc(x.pict.linesize[i]);
+             ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:181:13: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           x.pict.data[i] = (uint8_t*)av_malloc(x.pict.linesize[i]);
+             ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:181:18: warning: ‘AVPicture::data’ is deprecated [-Wdeprecated-declarations]
+           x.pict.data[i] = (uint8_t*)av_malloc(x.pict.linesize[i]);
+                  ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3868:39: note: declared here
+     uint8_t *data[AV_NUM_DATA_POINTERS];    ///< pointers to the image data planes
+                                       ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:181:18: warning: ‘AVPicture::data’ is deprecated [-Wdeprecated-declarations]
+           x.pict.data[i] = (uint8_t*)av_malloc(x.pict.linesize[i]);
+                  ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3868:39: note: declared here
+     uint8_t *data[AV_NUM_DATA_POINTERS];    ///< pointers to the image data planes
+                                       ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:181:18: warning: ‘AVPicture::data’ is deprecated [-Wdeprecated-declarations]
+           x.pict.data[i] = (uint8_t*)av_malloc(x.pict.linesize[i]);
+                  ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3868:39: note: declared here
+     uint8_t *data[AV_NUM_DATA_POINTERS];    ///< pointers to the image data planes
+                                       ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:181:50: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           x.pict.data[i] = (uint8_t*)av_malloc(x.pict.linesize[i]);
+                                                  ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:181:50: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           x.pict.data[i] = (uint8_t*)av_malloc(x.pict.linesize[i]);
+                                                  ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:181:50: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           x.pict.data[i] = (uint8_t*)av_malloc(x.pict.linesize[i]);
+                                                  ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:181:55: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           x.pict.data[i] = (uint8_t*)av_malloc(x.pict.linesize[i]);
+                                                       ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:181:55: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           x.pict.data[i] = (uint8_t*)av_malloc(x.pict.linesize[i]);
+                                                       ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:181:55: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           x.pict.data[i] = (uint8_t*)av_malloc(x.pict.linesize[i]);
+                                                       ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:182:20: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           memcpy(x.pict.data[i], y + p, x.pict.linesize[i]);
+                    ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:182:20: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           memcpy(x.pict.data[i], y + p, x.pict.linesize[i]);
+                    ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:182:20: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           memcpy(x.pict.data[i], y + p, x.pict.linesize[i]);
+                    ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:182:25: warning: ‘AVPicture::data’ is deprecated [-Wdeprecated-declarations]
+           memcpy(x.pict.data[i], y + p, x.pict.linesize[i]);
+                         ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3868:39: note: declared here
+     uint8_t *data[AV_NUM_DATA_POINTERS];    ///< pointers to the image data planes
+                                       ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:182:25: warning: ‘AVPicture::data’ is deprecated [-Wdeprecated-declarations]
+           memcpy(x.pict.data[i], y + p, x.pict.linesize[i]);
+                         ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3868:39: note: declared here
+     uint8_t *data[AV_NUM_DATA_POINTERS];    ///< pointers to the image data planes
+                                       ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:182:25: warning: ‘AVPicture::data’ is deprecated [-Wdeprecated-declarations]
+           memcpy(x.pict.data[i], y + p, x.pict.linesize[i]);
+                         ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3868:39: note: declared here
+     uint8_t *data[AV_NUM_DATA_POINTERS];    ///< pointers to the image data planes
+                                       ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:182:43: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           memcpy(x.pict.data[i], y + p, x.pict.linesize[i]);
+                                           ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:182:43: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           memcpy(x.pict.data[i], y + p, x.pict.linesize[i]);
+                                           ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:182:43: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           memcpy(x.pict.data[i], y + p, x.pict.linesize[i]);
+                                           ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:182:48: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           memcpy(x.pict.data[i], y + p, x.pict.linesize[i]);
+                                                ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:182:48: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           memcpy(x.pict.data[i], y + p, x.pict.linesize[i]);
+                                                ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:182:48: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           memcpy(x.pict.data[i], y + p, x.pict.linesize[i]);
+                                                ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:183:18: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           p += x.pict.linesize[i];
+                  ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:183:18: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           p += x.pict.linesize[i];
+                  ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:183:18: warning: ‘AVSubtitleRect::pict’ is deprecated [-Wdeprecated-declarations]
+           p += x.pict.linesize[i];
+                  ^~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3910:15: note: declared here
+     AVPicture pict;
+               ^~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:183:23: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           p += x.pict.linesize[i];
+                       ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:183:23: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           p += x.pict.linesize[i];
+                       ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:183:23: warning: ‘AVPicture::linesize’ is deprecated [-Wdeprecated-declarations]
+           p += x.pict.linesize[i];
+                       ^~~~~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/util.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:3870:38: note: declared here
+     int linesize[AV_NUM_DATA_POINTERS];     ///< number of bytes per line
+                                      ^
+[14/17] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/.conda/envs/test/include/x86_64-linux-gnu -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.o -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=video_reader -D_GLIBCXX_USE_CXX11_ABI=1
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.cpp: In lambda function:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.cpp:199:21: warning: ‘void av_register_all()’ is deprecated [-Wdeprecated-declarations]
+     av_register_all();
+                     ^
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:13:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/seekable_buffer.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.h:5,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavformat/avformat.h:2050:6: note: declared here
+ void av_register_all(void);
+      ^~~~~~~~~~~~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.cpp:200:26: warning: ‘void avcodec_register_all()’ is deprecated [-Wdeprecated-declarations]
+     avcodec_register_all();
+                          ^
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/seekable_buffer.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.h:5,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:4159:6: note: declared here
+ void avcodec_register_all(void);
+      ^~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.cpp:203:37: warning: ‘int av_lockmgr_register(int (*)(void**, AVLockOp))’ is deprecated [-Wdeprecated-declarations]
+     av_lockmgr_register(&ffmpeg_lock);
+                                     ^
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:12:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/seekable_buffer.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.h:5,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavcodec/avcodec.h:6163:5: note: declared here
+ int av_lockmgr_register(int (*cb)(void **mutex, enum AVLockOp op));
+     ^~~~~~~~~~~~~~~~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.cpp: In member function ‘bool ffmpeg::Decoder::openStreams(std::vector<ffmpeg::DecoderMetadata>*)’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.cpp:394:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i = 0; i < inputCtx_->nb_streams; i++) {
+                   ~~^~~~~~~~~~~~~~~~~~~~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.cpp:397:47: warning: ‘AVStream::codec’ is deprecated [-Wdeprecated-declarations]
+     const auto media = inputCtx_->streams[i]->codec->codec_type;
+                                               ^~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:13:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/seekable_buffer.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.h:5,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavformat/avformat.h:885:21: note: declared here
+     AVCodecContext *codec;
+                     ^~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.cpp:397:47: warning: ‘AVStream::codec’ is deprecated [-Wdeprecated-declarations]
+     const auto media = inputCtx_->streams[i]->codec->codec_type;
+                                               ^~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:13:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/seekable_buffer.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.h:5,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavformat/avformat.h:885:21: note: declared here
+     AVCodecContext *codec;
+                     ^~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.cpp:397:47: warning: ‘AVStream::codec’ is deprecated [-Wdeprecated-declarations]
+     const auto media = inputCtx_->streams[i]->codec->codec_type;
+                                               ^~~~~
+In file included from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/defs.h:13:0,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/seekable_buffer.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.h:5,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder/decoder.cpp:1:
+/home/bjuncek/.conda/envs/test/include/libavformat/avformat.h:885:21: note: declared here
+     AVCodecContext *codec;
+                     ^~~~~
+[15/17] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader/VideoReader.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/.conda/envs/test/include/x86_64-linux-gnu -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader/VideoReader.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader/VideoReader.o -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=video_reader -D_GLIBCXX_USE_CXX11_ABI=1
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader/VideoReader.cpp: In function ‘torch::List<at::Tensor> video_reader::probeVideo(bool, const at::Tensor&, std::__cxx11::string)’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader/VideoReader.cpp:582:17: warning: unused variable ‘media’ [-Wunused-variable]
+     const auto& media = header.format;
+                 ^~~~~
+In file included from /home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/c10/util/Logging.h:28:0,
+                 from /home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/c10/core/TensorImpl.h:18,
+                 from /home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/ATen/core/TensorBody.h:13,
+                 from /home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/ATen/Tensor.h:3,
+                 from /home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/ATen/Context.h:4,
+                 from /home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/ATen/ATen.h:9,
+                 from /home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/script.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader/VideoReader.h:3,
+                 from /home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader/VideoReader.cpp:1:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader/VideoReader.cpp: In instantiation of ‘size_t video_reader::fillTensor(std::vector<ffmpeg::DecoderOutputMessage>&, at::Tensor&, at::Tensor&, int64_t, int64_t) [with T = unsigned char; size_t = long unsigned int; int64_t = long int]’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader/VideoReader.cpp:122:71:   required from here
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/c10/util/logging_is_not_google_glog.h:140:51: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define CHECK_EQ(val1, val2) CHECK_OP(val1, val2, ==)
+                                                   ^
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/c10/util/logging_is_not_google_glog.h:116:3: note: in definition of macro ‘FATAL_IF’
+   condition ? (void)0                                          \
+   ^~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/c10/util/logging_is_not_google_glog.h:140:30: note: in expansion of macro ‘CHECK_OP’
+ #define CHECK_EQ(val1, val2) CHECK_OP(val1, val2, ==)
+                              ^~~~~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader/VideoReader.cpp:89:3: note: in expansion of macro ‘CHECK_EQ’
+   CHECK_EQ(framePts.size(0), msgs.size());
+   ^~~~~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader/VideoReader.cpp: In instantiation of ‘size_t video_reader::fillTensor(std::vector<ffmpeg::DecoderOutputMessage>&, at::Tensor&, at::Tensor&, int64_t, int64_t) [with T = float; size_t = long unsigned int; int64_t = long int]’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader/VideoReader.cpp:131:69:   required from here
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/c10/util/logging_is_not_google_glog.h:140:51: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ #define CHECK_EQ(val1, val2) CHECK_OP(val1, val2, ==)
+                                                   ^
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/c10/util/logging_is_not_google_glog.h:116:3: note: in definition of macro ‘FATAL_IF’
+   condition ? (void)0                                          \
+   ^~~~~~~~~
+/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/c10/util/logging_is_not_google_glog.h:140:30: note: in expansion of macro ‘CHECK_OP’
+ #define CHECK_EQ(val1, val2) CHECK_OP(val1, val2, ==)
+                              ^~~~~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader/VideoReader.cpp:89:3: note: in expansion of macro ‘CHECK_EQ’
+   CHECK_EQ(framePts.size(0), msgs.size());
+   ^~~~~~~~
+[16/17] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video/register.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/.conda/envs/test/include/x86_64-linux-gnu -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/video/register.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video/register.o -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=video_reader -D_GLIBCXX_USE_CXX11_ABI=1
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[17/17] c++ -MMD -MF /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video/Video.o.d -pthread -B /home/bjuncek/.conda/envs/test/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/decoder -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video_reader -I/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/include -I/home/bjuncek/.conda/envs/test/include/x86_64-linux-gnu -I/home/bjuncek/work/vision_bruno/torchvision/csrc -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/usr/local/cuda/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/TH -I/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/include/THC -I/home/bjuncek/.conda/envs/test/include/python3.8 -c -c /home/bjuncek/work/vision_bruno/torchvision/csrc/io/video/Video.cpp -o /home/bjuncek/work/vision_bruno/build/temp.linux-x86_64-3.8/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video/Video.o -std=c++14 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=video_reader -D_GLIBCXX_USE_CXX11_ABI=1
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video/Video.cpp: In member function ‘std::tuple<at::Tensor, double> Video::Next()’:
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video/Video.cpp:299:12: warning: unused variable ‘numberWrittenBytes’ [-Wunused-variable]
+       auto numberWrittenBytes = fillVideoTensor(out, outFrame);
+            ^~~~~~~~~~~~~~~~~~
+/home/bjuncek/work/vision_bruno/torchvision/csrc/io/video/Video.cpp:315:12: warning: unused variable ‘numberWrittenBytes’ [-Wunused-variable]
+       auto numberWrittenBytes = fillAudioTensor(out, outFrame);
+            ^~~~~~~~~~~~~~~~~~
+ninja: build stopped: subcommand failed.
+Traceback (most recent call last):
+  File "/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/utils/cpp_extension.py", line 1651, in _run_ninja_build
+    subprocess.run(
+  File "/home/bjuncek/.conda/envs/test/lib/python3.8/subprocess.py", line 512, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ninja', '-v']' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "setup.py", line 448, in <module>
+    setup(
+  File "/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/setuptools/__init__.py", line 153, in setup
+    return distutils.core.setup(**attrs)
+  File "/home/bjuncek/.conda/envs/test/lib/python3.8/distutils/core.py", line 148, in setup
+    dist.run_commands()
+  File "/home/bjuncek/.conda/envs/test/lib/python3.8/distutils/dist.py", line 966, in run_commands
+    self.run_command(cmd)
+  File "/home/bjuncek/.conda/envs/test/lib/python3.8/distutils/dist.py", line 985, in run_command
+    cmd_obj.run()
+  File "/home/bjuncek/.conda/envs/test/lib/python3.8/distutils/command/build.py", line 135, in run
+    self.run_command(cmd_name)
+  File "/home/bjuncek/.conda/envs/test/lib/python3.8/distutils/cmd.py", line 313, in run_command
+    self.distribution.run_command(command)
+  File "/home/bjuncek/.conda/envs/test/lib/python3.8/distutils/dist.py", line 985, in run_command
+    cmd_obj.run()
+  File "/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/setuptools/command/build_ext.py", line 79, in run
+    _build_ext.run(self)
+  File "/home/bjuncek/.conda/envs/test/lib/python3.8/distutils/command/build_ext.py", line 340, in run
+    self.build_extensions()
+  File "/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/utils/cpp_extension.py", line 704, in build_extensions
+    build_ext.build_extensions(self)
+  File "/home/bjuncek/.conda/envs/test/lib/python3.8/distutils/command/build_ext.py", line 449, in build_extensions
+    self._build_extensions_serial()
+  File "/home/bjuncek/.conda/envs/test/lib/python3.8/distutils/command/build_ext.py", line 474, in _build_extensions_serial
+    self.build_extension(ext)
+  File "/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/setuptools/command/build_ext.py", line 196, in build_extension
+    _build_ext.build_extension(self, ext)
+  File "/home/bjuncek/.conda/envs/test/lib/python3.8/distutils/command/build_ext.py", line 528, in build_extension
+    objects = self.compiler.compile(sources,
+  File "/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/utils/cpp_extension.py", line 525, in unix_wrap_ninja_compile
+    _write_ninja_file_and_compile_objects(
+  File "/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/utils/cpp_extension.py", line 1348, in _write_ninja_file_and_compile_objects
+    _run_ninja_build(
+  File "/home/bjuncek/.conda/envs/test/lib/python3.8/site-packages/torch/utils/cpp_extension.py", line 1667, in _run_ninja_build
+    raise RuntimeError(message) from e
+RuntimeError: Error compiling objects for extension
