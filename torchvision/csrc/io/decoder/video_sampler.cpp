@@ -14,6 +14,19 @@ int preparePlanes(
     int* lineSize) {
   int result;
 
+  // Setup the data pointers and linesizes based on the specified image
+  // parameters and the provided array. This sets up "planes" to point to a
+  // "buffer"
+
+  // fmt: desired output format (I think)
+  // buffer: source constant image buffer (in different format) that will
+  // contain the final image planes: destination data pointer to be filled
+  // lineSize: target destination linesize: always {0}
+  // NOTE: 1 at the end of av_fill_arrays is the value used for alignment
+  LOG(ERROR) << "In PreparePlanes ";
+  LOG(ERROR) << "\t Destination format: " << fmt.format
+             << "\t Destination linesize: " << lineSize;
+
   if ((result = av_image_fill_arrays(
            planes,
            lineSize,
@@ -38,10 +51,23 @@ int transformImage(
     uint8_t* planes[],
     int lines[]) {
   int result;
+  LOG(ERROR) << "In transformImage ";
   if ((result = preparePlanes(outFormat, out, planes, lines)) < 0) {
     return result;
   }
 
+  // Scale the image slice in srcSlice and put the resulting scaled slice in the
+  // image in planes.
+
+  // context: SWSContext allocated on line [x]
+  // srcSlice: frame data in YUV420P
+  // srcStride: the array containing the strides for each plane of the source
+  // image (from AVFrame->linesize[0] that is decoded)
+  // srcY stride always 0: this i s a parameter of YUV format
+  // planes: destination pointer (I think mapped to "out", not sure why neded)
+  // lines: constant 0
+
+  LOG(ERROR) << "\t source stride: " << srcStride;
   if ((result = sws_scale(
            context, srcSlice, srcStride, 0, inFormat.height, planes, lines)) <
       0) {
@@ -166,6 +192,7 @@ int VideoSampler::sample(
       1);
 
   out->ensure(outImageSize);
+  LOG(ERROR) << "Sample main BODY ";
 
   uint8_t* scalePlanes[4] = {nullptr};
   int scaleLines[4] = {0};
@@ -183,39 +210,39 @@ int VideoSampler::sample(
     return result;
   }
 
-  // is crop required?
-  if (cropContext_) {
-    uint8_t* cropPlanes[4] = {nullptr};
-    int cropLines[4] = {0};
+  // // is crop required?
+  // if (cropContext_) {
+  //   uint8_t* cropPlanes[4] = {nullptr};
+  //   int cropLines[4] = {0};
 
-    if (params_.out.video.height < scaleFormat_.height) {
-      // Destination image is wider of source image: cut top and bottom
-      for (size_t i = 0; i < 4 && scalePlanes[i] != nullptr; ++i) {
-        scalePlanes[i] += scaleLines[i] *
-            (scaleFormat_.height - params_.out.video.height) / 2;
-      }
-    } else {
-      // Source image is wider of destination image: cut sides
-      for (size_t i = 0; i < 4 && scalePlanes[i] != nullptr; ++i) {
-        scalePlanes[i] += scaleLines[i] *
-            (scaleFormat_.width - params_.out.video.width) / 2 /
-            scaleFormat_.width;
-      }
-    }
+  //   if (params_.out.video.height < scaleFormat_.height) {
+  //     // Destination image is wider of source image: cut top and bottom
+  //     for (size_t i = 0; i < 4 && scalePlanes[i] != nullptr; ++i) {
+  //       scalePlanes[i] += scaleLines[i] *
+  //           (scaleFormat_.height - params_.out.video.height) / 2;
+  //     }
+  //   } else {
+  //     // Source image is wider of destination image: cut sides
+  //     for (size_t i = 0; i < 4 && scalePlanes[i] != nullptr; ++i) {
+  //       scalePlanes[i] += scaleLines[i] *
+  //           (scaleFormat_.width - params_.out.video.width) / 2 /
+  //           scaleFormat_.width;
+  //     }
+  //   }
 
-    // crop image
-    if ((result = transformImage(
-             cropContext_,
-             scalePlanes,
-             scaleLines,
-             params_.out.video,
-             params_.out.video,
-             out->writableTail(),
-             cropPlanes,
-             cropLines))) {
-      return result;
-    }
-  }
+  //   // crop image
+  //   if ((result = transformImage(
+  //            cropContext_,
+  //            scalePlanes,
+  //            scaleLines,
+  //            params_.out.video,
+  //            params_.out.video,
+  //            out->writableTail(),
+  //            cropPlanes,
+  //            cropLines))) {
+  //     return result;
+  //   }
+  // }
 
   out->append(outImageSize);
   return outImageSize;
@@ -225,7 +252,7 @@ int VideoSampler::sample(AVFrame* frame, ByteStorage* out) {
   if (!frame) {
     return 0; // no flush for videos
   }
-
+  LOG(ERROR) << "Sample with frame data ";
   return sample(frame->data, frame->linesize, out);
 }
 
@@ -243,6 +270,7 @@ int VideoSampler::sample(const ByteStorage* in, ByteStorage* out) {
     return result;
   }
 
+  LOG(ERROR) << "Sample with BS data ";
   return sample(inPlanes, inLineSize, out);
 }
 
