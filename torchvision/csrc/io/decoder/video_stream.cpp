@@ -15,35 +15,6 @@ bool operator==(const VideoFormat& x, const AVCodecContext& y) {
   return x.width == y.width && x.height == y.height && x.format == y.pix_fmt;
 }
 
-void SaveAvFrame(AVFrame* avFrame) {
-  FILE* fDump = fopen("inVideoStreamTestStuff.binary", "ab");
-
-  uint32_t pitchY = avFrame->linesize[0];
-  uint32_t pitchU = avFrame->linesize[1];
-  uint32_t pitchV = avFrame->linesize[2];
-
-  uint8_t* avY = avFrame->data[0];
-  uint8_t* avU = avFrame->data[1];
-  uint8_t* avV = avFrame->data[2];
-
-  for (uint32_t i = 0; i < avFrame->height; i++) {
-    fwrite(avY, avFrame->width, 1, fDump);
-    avY += pitchY;
-  }
-
-  for (uint32_t i = 0; i < avFrame->height / 2; i++) {
-    fwrite(avU, avFrame->width / 2, 1, fDump);
-    avU += pitchU;
-  }
-
-  for (uint32_t i = 0; i < avFrame->height / 2; i++) {
-    fwrite(avV, avFrame->width / 2, 1, fDump);
-    avV += pitchV;
-  }
-
-  fclose(fDump);
-}
-
 VideoFormat& toVideoFormat(VideoFormat& x, const AVFrame& y) {
   x.width = y.width;
   x.height = y.height;
@@ -158,28 +129,18 @@ int VideoStream::copyFrameBytes(ByteStorage* out, bool flush) {
   LOG(ERROR) << "expected out after sampler: " << resislav;
   LOG(ERROR) << "FSIZE of the OUT: " << out->length();
 
-  // char frame_filename[1024];
-  // snprintf(
-  //     frame_filename,
-  //     sizeof(frame_filename),
-  //     "%s-%d.pgm",
-  //     "PostTransform_frame",
-  //     codecCtx_->frame_number);
-  // // save a grayscale frame into a .pgm file
-  // save_gray_frame(
-  //     (unsigned char*)out->data(),
-  //     frame_->linesize[0],
-  //     format_.format.video.width,
-  //     format_.format.video.height,
-  //     frame_filename);
+  // Please note: this saves YUV420P file in a planar form.
+  // can be accessed (from python as follows)
 
-  // FILE* pFile2;
+  //   YUV = np.fromfile("inVideoStreamTestStuff.binary", dtype=np.uint8)
+  //   Y = YUV[0:w*h].reshape(h,w)
+  //   #Take next px / 4 samples as U
+  //   U = YUV[px:(px*5)//4].reshape(h//2,w//2)
+  //   #Take next px / 4 samples as V
+  //   V = YUV[(px*5)//4:(px*6)//4].reshape(h//2,w//2)
+  Util::SaveAvFrame(frame_, "inStreamPreTransform.binary");
 
-  // pFile2 = fopen("inVideoStreamPreTransform.binary", "wb");
-  // fwrite(frame_->data[0], 1, fsize, pFile2);
-  // fclose(pFile2);
-  SaveAvFrame(frame_);
-
+  // this binary dump should be RGB
   FILE* pFile;
   pFile = fopen("inVideoStreamPostTransform.binary", "wb");
   fwrite(out->data(), 1, out->length(), pFile);

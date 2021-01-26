@@ -25,3 +25,5 @@ gen.yml
 .idea/
 *.orig
 *-checkpoint.ipynb
+*.out
+*.binary

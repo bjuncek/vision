@@ -18,12 +18,6 @@ class Stream {
       bool convertPtsToWallTime,
       int64_t loggingUuid);
   virtual ~Stream();
-  void save_gray_frame(
-      unsigned char* buf,
-      int wrap,
-      int xsize,
-      int ysize,
-      char* filename);
 
   // returns 0 - on success or negative error
   int openCodec(std::vector<DecoderMetadata>* metadata);
