@@ -27,4 +27,5 @@ gen.yml
 *-checkpoint.ipynb
 *.venv
 *.out
+*.log
 *.binary
