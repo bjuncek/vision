@@ -26,4 +26,5 @@ gen.yml
 *.orig
 *-checkpoint.ipynb
 *.out
+*.log
 *.binary
