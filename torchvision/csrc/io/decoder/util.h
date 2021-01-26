@@ -9,6 +9,13 @@ namespace ffmpeg {
  */
 
 namespace Util {
+void SaveAvFrame(AVFrame* avFrame, std::string str);
+void SaveYComponent(
+    unsigned char* buf,
+    int wrap,
+    int xsize,
+    int ysize,
+    char* filename);
 std::string generateErrorDesc(int errorCode);
 size_t serialize(const AVSubtitle& sub, ByteStorage* out);
 bool deserialize(const ByteStorage& buf, AVSubtitle* sub);

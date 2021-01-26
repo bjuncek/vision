@@ -1,7 +1,69 @@
 #include "util.h"
 #include <c10/util/Logging.h>
 
+using namespace std;
 namespace ffmpeg {
+
+void SaveYComponent(
+    unsigned char* buf,
+    int wrap,
+    int xsize,
+    int ysize,
+    char* filename) {
+  // saves only Y component of YUV data straem
+  FILE* f;
+  int i;
+  f = fopen(filename, "w");
+  // writing the minimal required header for a pgm file format
+  // portable graymap format ->
+  // https://en.wikipedia.org/wiki/Netpbm_format#PGM_example
+  fprintf(f, "P5\n%d %d\n%d\n", xsize, ysize, 255);
+
+  // writing line by line
+  for (i = 0; i < ysize; i++)
+    fwrite(buf + i * wrap, 1, xsize, f);
+  fclose(f);
+}
+
+void SaveAvFrame(AVFrame* avFrame, std::string str) {
+  // This is a nead and serialised way to dump YUV420P data
+  // into a readable tensor
+
+  // accessing code:
+  //   YUV = np.fromfile("filename.binary", dtype=np.uint8)
+  //   Y = YUV[0:w*h].reshape(h,w)
+  //   #Take next px / 4 samples as U
+  //   U = YUV[px:(px*5)//4].reshape(h//2,w//2)
+  //   #Take next px / 4 samples as V
+  //   V = YUV[(px*5)//4:(px*6)//4].reshape(h//2,w//2)
+
+  FILE* fDump = fopen(str.c_str(), "ab");
+
+  uint32_t pitchY = avFrame->linesize[0];
+  uint32_t pitchU = avFrame->linesize[1];
+  uint32_t pitchV = avFrame->linesize[2];
+
+  uint8_t* avY = avFrame->data[0];
+  uint8_t* avU = avFrame->data[1];
+  uint8_t* avV = avFrame->data[2];
+
+  for (uint32_t i = 0; i < avFrame->height; i++) {
+    fwrite(avY, avFrame->width, 1, fDump);
+    avY += pitchY;
+  }
+
+  for (uint32_t i = 0; i < avFrame->height / 2; i++) {
+    fwrite(avU, avFrame->width / 2, 1, fDump);
+    avU += pitchU;
+  }
+
+  for (uint32_t i = 0; i < avFrame->height / 2; i++) {
+    fwrite(avV, avFrame->width / 2, 1, fDump);
+    avV += pitchV;
+  }
+
+  fclose(fDump);
+}
 
 namespace Serializer {
 
