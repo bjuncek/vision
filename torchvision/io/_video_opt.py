@@ -14,7 +14,6 @@ _HAS_VIDEO_OPT = False
 
 try:
     lib_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-
     loader_details = (
         importlib.machinery.ExtensionFileLoader,
         importlib.machinery.EXTENSION_SUFFIXES
@@ -22,7 +21,7 @@ try:
 
     extfinder = importlib.machinery.FileFinder(lib_dir, loader_details)
     ext_specs = extfinder.find_spec("video_reader")
-
+    print("WHAT NOW")
     if os.name == 'nt':
         # Load the video_reader extension using LoadLibraryExW
         import ctypes
@@ -44,11 +43,13 @@ try:
                 raise err
 
         kernel32.SetErrorMode(prev_error_mode)
-
+    
     if ext_specs is not None:
+        print(ext_specs)
         torch.ops.load_library(ext_specs.origin)
         _HAS_VIDEO_OPT = True
 except (ImportError, OSError):
+    print("STUFF?")
     pass
 
 

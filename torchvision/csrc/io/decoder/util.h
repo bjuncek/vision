@@ -9,7 +9,6 @@ namespace ffmpeg {
  */
 
 namespace Util {
-void SaveAvFrame(AVFrame* avFrame, std::string str);
 void SaveYComponent(
     unsigned char* buf,
     int wrap,
