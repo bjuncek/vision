@@ -171,7 +171,6 @@ int VideoStream::copyFrameBytes(ByteStorage* out, bool flush) {
 
   // Please note: this saves YUV420P file in a planar form.
   // can be accessed (from python as follows)
-
   //   YUV = np.fromfile("inVideoStreamTestStuff.binary", dtype=np.uint8)
   //   Y = YUV[0:w*h].reshape(h,w)
   //   #Take next px / 4 samples as U
