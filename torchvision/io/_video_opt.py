@@ -21,7 +21,7 @@ try:
 
     extfinder = importlib.machinery.FileFinder(lib_dir, loader_details)
     ext_specs = extfinder.find_spec("video_reader")
-    print("WHAT NOW")
+    print("We are in the HASOPT file")
     if os.name == 'nt':
         # Load the video_reader extension using LoadLibraryExW
         import ctypes
@@ -48,8 +48,9 @@ try:
         print(ext_specs)
         torch.ops.load_library(ext_specs.origin)
         _HAS_VIDEO_OPT = True
+
 except (ImportError, OSError):
-    print("STUFF?")
+    print("Errorz on inport god help us")
     pass
 
 
