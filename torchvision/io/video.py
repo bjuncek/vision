@@ -255,6 +255,10 @@ def read_video(
         vframes (Tensor[T, H, W, C]): the `T` video frames
         aframes (Tensor[K, L]): the audio frames, where `K` is the number of channels and `L` is the number of points
         info (Dict): metadata for the video and audio. Can contain the fields video_fps (float) and audio_fps (int)
+    
+    .. note::
+
+        Video tensors are returned as torch.uint8 tensors in range [0,255]. Audio is returned as torch.float tensors.
     """
 
     from torchvision import get_video_backend
