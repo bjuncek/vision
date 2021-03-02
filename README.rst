@@ -103,6 +103,18 @@ otherwise, add the include and library paths in the environment variables ``TORC
 .. _libjpeg: http://ijg.org/
 .. _libjpeg-turbo: https://libjpeg-turbo.org/
 
+
+Video Backend
+=============
+Torchvision currently supports the following video backends:
+* `pyav`_ - (default); requires `pyav <https://github.com/PyAV-Org/PyAV>`_ to be installed
+
+* `video_reader`_ - a faster replacement that uses FFMPEG directly. This is required for using a fine-grainded video API.
+
+
+**Notes:** Building with FFMPEG is disabled by default in the latest master. If you want to use the 'video_reader' backend, please compile torchvision from source following the instructions above. 
+FFmgeg binaries and libraries need to be installed and discoverable in PATH
+
 C++ API
 =======
 TorchVision also offers a C++ API that contains C++ equivalent of python models.
