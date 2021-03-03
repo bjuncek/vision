@@ -118,7 +118,7 @@ class VideoReader:
         Returns:
             (dict): a dictionary and containing decoded frame (``data``)
             and corresponding timestamp (``pts``) in seconds
-    
+
         .. note::
 
             Video tensors are returned as torch.uint8 tensor in range [0,255]. 
