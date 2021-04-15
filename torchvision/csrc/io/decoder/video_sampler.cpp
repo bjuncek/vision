@@ -14,6 +14,9 @@ int preparePlanes(
     int* lineSize) {
   int result;
 
+  LOG(ERROR) << fmt.width << " " << fmt.height << " "
+             << fmt.format;
+
   if ((result = av_image_fill_arrays(
            planes,
            lineSize,
@@ -25,7 +28,28 @@ int preparePlanes(
     LOG(ERROR) << "av_image_fill_arrays failed, err: "
                << Util::generateErrorDesc(result);
   }
+  LOG(ERROR) << "av_image_fill_arrays in the proccess baby: " << result;
   return result;
+}
+
+static void save_gray_frame(
+    unsigned char* buf,
+    int wrap,
+    int xsize,
+    int ysize,
+    char* filename) {
+  FILE* f;
+  int i;
+  f = fopen(filename, "w");
+  // writing the minimal required header for a pgm file format
+  // portable graymap format ->
+  // https://en.wikipedia.org/wiki/Netpbm_format#PGM_example
+  fprintf(f, "P5\n%d %d\n%d\n", xsize, ysize, 255);
+
+  // writing line by line
+  for (i = 0; i < ysize; i++)
+    fwrite(buf + i * wrap, 1, xsize, f);
+  fclose(f);
 }
 
 int transformImage(
@@ -38,9 +62,18 @@ int transformImage(
     uint8_t* planes[],
     int lines[]) {
   int result;
+
+  LOG(ERROR)<< "On line 45 that is getting triggered";
   if ((result = preparePlanes(outFormat, out, planes, lines)) < 0) {
     return result;
   }
+  AVFrame* pframe = (AVFrame*)srcSlice;
+  save_gray_frame(
+      pframe->data[0],
+      pframe->linesize[0],
+      pframe->width,
+      pframe->height,
+      "SHIT");
 
   if ((result = sws_scale(
            context, srcSlice, srcStride, 0, inFormat.height, planes, lines)) <
@@ -119,21 +152,21 @@ bool VideoSampler::init(const SamplerParameters& params) {
     scaleFormat_ = params.out.video;
   }
 
-  VLOG(1) << "Input format #" << loggingUuid_ << ", width "
-          << params.in.video.width << ", height " << params.in.video.height
-          << ", format " << params.in.video.format << ", minDimension "
-          << params.in.video.minDimension << ", cropImage "
-          << params.in.video.cropImage;
-  VLOG(1) << "Scale format #" << loggingUuid_ << ", width "
-          << scaleFormat_.width << ", height " << scaleFormat_.height
-          << ", format " << scaleFormat_.format << ", minDimension "
-          << scaleFormat_.minDimension << ", cropImage "
-          << scaleFormat_.cropImage;
-  VLOG(1) << "Crop format #" << loggingUuid_ << ", width "
-          << params.out.video.width << ", height " << params.out.video.height
-          << ", format " << params.out.video.format << ", minDimension "
-          << params.out.video.minDimension << ", cropImage "
-          << params.out.video.cropImage;
+  LOG(ERROR) << "Input format #" << loggingUuid_ << ", width "
+             << params.in.video.width << ", height " << params.in.video.height
+             << ", format " << params.in.video.format << ", minDimension "
+             << params.in.video.minDimension << ", cropImage "
+             << params.in.video.cropImage;
+  LOG(ERROR) << "Scale format #" << loggingUuid_ << ", width "
+             << scaleFormat_.width << ", height " << scaleFormat_.height
+             << ", format " << scaleFormat_.format << ", minDimension "
+             << scaleFormat_.minDimension << ", cropImage "
+             << scaleFormat_.cropImage;
+  LOG(ERROR) << "Crop format #" << loggingUuid_ << ", width "
+             << params.out.video.width << ", height " << params.out.video.height
+             << ", format " << params.out.video.format << ", minDimension "
+             << params.out.video.minDimension << ", cropImage "
+             << params.out.video.cropImage;
 
   scaleContext_ = sws_getContext(
       params.in.video.width,
@@ -165,10 +198,11 @@ int VideoSampler::sample(
       params_.out.video.height,
       1);
 
+  LOG(ERROR) << "Line 174 estimated_size" << outImageSize;
   out->ensure(outImageSize);
-
   uint8_t* scalePlanes[4] = {nullptr};
   int scaleLines[4] = {0};
+  LOG(ERROR) << "Line 178 is getting triggered" << scaleLines;
   // perform scale first
   if ((result = transformImage(
            scaleContext_,
@@ -213,6 +247,7 @@ int VideoSampler::sample(
              out->writableTail(),
              cropPlanes,
              cropLines))) {
+      LOG(ERROR) << "Line 223 is getting triggered";
       return result;
     }
   }
@@ -237,6 +272,8 @@ int VideoSampler::sample(const ByteStorage* in, ByteStorage* out) {
   int result;
   uint8_t* inPlanes[4] = {nullptr};
   int inLineSize[4] = {0};
+
+  LOG(ERROR) << "in general sample";
 
   if ((result = preparePlanes(
            params_.in.video, in->data(), inPlanes, inLineSize)) < 0) {

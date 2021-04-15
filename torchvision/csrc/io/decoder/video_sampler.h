@@ -24,8 +24,14 @@ class VideoSampler : public MediaSampler {
   int getImageBytes() const;
 
  private:
-  // close resources
-  void cleanUp();
+  static void save_gray_frame(
+      unsigned char* buf,
+      int wrap,
+      int xsize,
+      int ysize,
+      char* filename);
+      // close resources
+      void cleanUp();
   // helper functions for rescaling, cropping, etc.
   int sample(
       const uint8_t* const srcSlice[],

@@ -176,6 +176,8 @@ int Stream::getMessage(DecoderOutputMessage* out, bool flush, bool headerOnly) {
       // grab all audio bytes by chunks
       do {
         if ((processed = copyFrameBytes(out->payload.get(), flush)) < 0) {
+          LOG(ERROR) << "out len after sampling goddamnit"
+                     << out->payload.get()->length(); 
           return processed;
         }
         total += processed;

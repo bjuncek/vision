@@ -110,7 +110,7 @@ int VideoStream::copyFrameBytes(ByteStorage* out, bool flush) {
             << ", minDimension: " << format_.format.video.minDimension
             << ", crop: " << format_.format.video.cropImage;
   }
-
+  LOG(ERROR) << "out.len before sample" << out->length();
   return sampler_->sample(flush ? nullptr : frame_, out);
 }
 
